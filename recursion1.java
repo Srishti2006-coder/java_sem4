@@ -150,20 +150,75 @@ import java.util.Scanner;
 //     }
 // }
 
-import java.util.Scanner;
+import java.util.*;
 
-class Codechef {
-    public static void print_Num(int n) {
-        if (n == 9) {
-            return;
+// q.) print numbers from n to 5 using recursion
+
+// class Codechef {
+//     public static void print_Num(int n) {
+//         if (n == 5) {
+//             return;
+//         }
+//         System.out.println(n);
+//         print_Num(n - 1);
+//         // System.out.println(n);
+//     }
+
+//     public static void main(String args[]) {
+//         // Scanner sc = new Scanner(System.in);
+//         // int n = sc.nextInt();
+//         print_Num(10);
+//     }
+// }
+
+// q.) print n to 5 and back to n          O(n)
+
+class Main {
+    // static void fun(int n) {
+    // if (n == 0) {
+    // return;
+    // }
+    // System.out.println(n);
+    // fun(n - 1);
+    // }
+
+    // static void funRev(int n) {
+    // if (n == 0) {
+    // return;
+    // }
+    // funRev(n - 1);
+    // System.out.println(n);
+    // }
+
+    // static void funBoth(int n) {
+    // if (n == 0) {
+    // return;
+    // }
+
+    // System.out.println(n); // 🔴 before call → descending
+    // funBoth(n - 1);
+    // System.out.println(n); // 🟢 after call → ascending
+    // }
+
+    // public static void main(String args[]) {
+    // funBoth(5);
+    // }
+    // }
+
+    // q.) factorial using recursion
+
+class Main {
+    static int fact(int n){
+        if (n == 0){
+            return 1;
         }
-        System.out.println(n);
-        print_Num(n - 1);
+        if (n == 1){
+            return 1;
+        }
+        return n * fact(n-1);
     }
-
-    public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        print_Num(n);
+    public static void main (String args[]){
+        int ans = fact(5);
+        System.out.println(ans);
     }
 }
