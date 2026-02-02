@@ -125,55 +125,55 @@ import java.util.Scanner;
 // }
 // }
 
-// q.) binary seaarch 
+// q.) binary seaarch
 
 // class Codechef {
-//     static int binarySearch(int arr[], int target, int st, int end) {
-//         if (st > end) {
-//             return -1;
-//         }
-//         int mid = st + (end - st) / 2;
+// static int binarySearch(int arr[], int target, int st, int end) {
+// if (st > end) {
+// return -1;
+// }
+// int mid = st + (end - st) / 2;
 
-//         if (arr[mid] == target) {
-//             return mid;
-//         }
-//         if (target > arr[mid]) {
-//             return binarySearch(arr, target, mid + 1, end);
-//         }
-//         return binarySearch(arr, target, st, mid - 1);
-//     }
-
-//     public static void main(String args[]) {
-//         int arr[] = { 1, 34, 56, 78, 88, 90, 99 };
-//         int target = 990;
-//         System.out.println(binarySearch(arr, target, 0, arr.length - 1));
-//     }
+// if (arr[mid] == target) {
+// return mid;
+// }
+// if (target > arr[mid]) {
+// return binarySearch(arr, target, mid + 1, end);
+// }
+// return binarySearch(arr, target, st, mid - 1);
 // }
 
-import java.util.*;
+// public static void main(String args[]) {
+// int arr[] = { 1, 34, 56, 78, 88, 90, 99 };
+// int target = 990;
+// System.out.println(binarySearch(arr, target, 0, arr.length - 1));
+// }
+// }
+
+// import java.util.*;
 
 // q.) print numbers from n to 5 using recursion
 
 // class Codechef {
-//     public static void print_Num(int n) {
-//         if (n == 5) {
-//             return;
-//         }
-//         System.out.println(n);
-//         print_Num(n - 1);
-//         // System.out.println(n);
-//     }
-
-//     public static void main(String args[]) {
-//         // Scanner sc = new Scanner(System.in);
-//         // int n = sc.nextInt();
-//         print_Num(10);
-//     }
+// public static void print_Num(int n) {
+// if (n == 5) {
+// return;
+// }
+// System.out.println(n);
+// print_Num(n - 1);
+// // System.out.println(n);
 // }
 
-// q.) print n to 5 and back to n          O(n)
+// public static void main(String args[]) {
+// // Scanner sc = new Scanner(System.in);
+// // int n = sc.nextInt();
+// print_Num(10);
+// }
+// }
 
-//class Main {
+// q.) print n to 5 and back to n O(n)
+
+// class Main {
 // static void fun(int n) {
 // if (n == 0) {
 // return;
@@ -208,33 +208,67 @@ import java.util.*;
 // q.) factorial using recursion
 
 // class Main {
-//     static int fact(int n) {
-//         if (n == 0) {
-//             return 1;
-//         }
-//         if (n == 1) {
-//             return 1;
-//         }
-//         return n * fact(n - 1);
-//     }
+// static int fact(int n) {
+// if (n == 0) {
+// return 1;
+// }
+// if (n == 1) {
+// return 1;
+// }
+// return n * fact(n - 1);
+// }
 
-//     public static void main(String args[]) {
-//         int ans = fact(5);
-//         System.out.println(ans);
-//     }
+// public static void main(String args[]) {
+// int ans = fact(5);
+// System.out.println(ans);
+// }
 // }
 
 // q.) sum of n natural numbers using recursion
-class Main {
-    static int sumN(int n) {
-        if (n == 0) {
-            return 0;
-        }
-        return n + sumN(n - 1);
-    }
+// class Main {
+// static int sumN(int n) {
+// if (n == 0) {
+// return 0;
+// }
+// return n + sumN(n - 1); // 5 + sumN(4)
+// // 4 + sumN(3)
+// // 3 + sumN(2)
+// // 2 + sumN(1)
+// }
 
-    public static void main(String args[]) {
-        int ans = sumN(5);
-        System.out.println(ans);
-    }
-}
+// public static void main(String args[]) {
+// int ans = sumN(5);
+// System.out.println(ans);
+// }
+// }
+
+// q.) sum of a digit
+
+// class Main {
+// static int sumofdigits(int n){
+// if (n == 0){
+// return 0;
+// }
+// return (n % 10) + sumofdigits(n/10);
+// }
+// public static void main (String args[]){
+// int ans = sumofdigits(1342);
+// System.out.println(ans);
+// }
+// }
+
+// q.) product of a digit
+
+// class Main {
+// static int sumofdigits(int n) {
+// if (n % 10 == n) {
+// return n;
+// }
+// return (n % 10) * sumofdigits(n / 10);
+// }
+
+// public static void main(String args[]) {
+// int ans = sumofdigits(134);
+// System.out.println(ans);
+// }
+// }
