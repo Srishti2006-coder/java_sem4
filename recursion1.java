@@ -173,52 +173,68 @@ import java.util.*;
 
 // q.) print n to 5 and back to n          O(n)
 
+//class Main {
+// static void fun(int n) {
+// if (n == 0) {
+// return;
+// }
+// System.out.println(n);
+// fun(n - 1);
+// }
+
+// static void funRev(int n) {
+// if (n == 0) {
+// return;
+// }
+// funRev(n - 1);
+// System.out.println(n);
+// }
+
+// static void funBoth(int n) {
+// if (n == 0) {
+// return;
+// }
+
+// System.out.println(n); // 🔴 before call → descending
+// funBoth(n - 1);
+// System.out.println(n); // 🟢 after call → ascending
+// }
+
+// public static void main(String args[]) {
+// funBoth(5);
+// }
+// }
+
+// q.) factorial using recursion
+
+// class Main {
+//     static int fact(int n) {
+//         if (n == 0) {
+//             return 1;
+//         }
+//         if (n == 1) {
+//             return 1;
+//         }
+//         return n * fact(n - 1);
+//     }
+
+//     public static void main(String args[]) {
+//         int ans = fact(5);
+//         System.out.println(ans);
+//     }
+// }
+
+// q.) sum of n natural numbers using recursion
 class Main {
-    // static void fun(int n) {
-    // if (n == 0) {
-    // return;
-    // }
-    // System.out.println(n);
-    // fun(n - 1);
-    // }
-
-    // static void funRev(int n) {
-    // if (n == 0) {
-    // return;
-    // }
-    // funRev(n - 1);
-    // System.out.println(n);
-    // }
-
-    // static void funBoth(int n) {
-    // if (n == 0) {
-    // return;
-    // }
-
-    // System.out.println(n); // 🔴 before call → descending
-    // funBoth(n - 1);
-    // System.out.println(n); // 🟢 after call → ascending
-    // }
-
-    // public static void main(String args[]) {
-    // funBoth(5);
-    // }
-    // }
-
-    // q.) factorial using recursion
-
-class Main {
-    static int fact(int n){
-        if (n == 0){
-            return 1;
+    static int sumN(int n) {
+        if (n == 0) {
+            return 0;
         }
-        if (n == 1){
-            return 1;
-        }
-        return n * fact(n-1);
+        return n + sumN(n - 1);
     }
-    public static void main (String args[]){
-        int ans = fact(5);
+
+    public static void main(String args[]) {
+        int ans = sumN(5);
         System.out.println(ans);
     }
 }
