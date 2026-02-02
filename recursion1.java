@@ -124,3 +124,46 @@ import java.util.Scanner;
 // System.out.println(fibonacci(n));
 // }
 // }
+
+// q.) binary seaarch 
+
+// class Codechef {
+//     static int binarySearch(int arr[], int target, int st, int end) {
+//         if (st > end) {
+//             return -1;
+//         }
+//         int mid = st + (end - st) / 2;
+
+//         if (arr[mid] == target) {
+//             return mid;
+//         }
+//         if (target > arr[mid]) {
+//             return binarySearch(arr, target, mid + 1, end);
+//         }
+//         return binarySearch(arr, target, st, mid - 1);
+//     }
+
+//     public static void main(String args[]) {
+//         int arr[] = { 1, 34, 56, 78, 88, 90, 99 };
+//         int target = 990;
+//         System.out.println(binarySearch(arr, target, 0, arr.length - 1));
+//     }
+// }
+
+import java.util.Scanner;
+
+class Codechef {
+    public static void print_Num(int n) {
+        if (n == 9) {
+            return;
+        }
+        System.out.println(n);
+        print_Num(n - 1);
+    }
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        print_Num(n);
+    }
+}
