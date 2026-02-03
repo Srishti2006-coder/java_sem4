@@ -272,3 +272,128 @@ import java.util.Scanner;
 // System.out.println(ans);
 // }
 // }
+
+// n-- VS --n in recursion
+
+// class Codechef {
+// static void fun(int n) {
+// if (n == 0) {
+// return;
+// }
+// System.out.println(n);
+// fun(--n);
+// // fun(n--); // Infinite times chlta jayega
+// }
+
+// public static void main(String args[]) {
+// fun(5);
+// }
+// }
+
+// q.) Reverse a number
+
+// class Main {
+// public static void main (String args[]){
+// int n = 1234;
+// int rev = 0;
+// if (n == 0){
+// return ;
+// }
+// while (n != 0){
+// int digit = n % 10;
+// rev = rev * 10 + digit;
+// n = n/10;
+// }
+// System.out.println(rev);
+// }
+// }
+
+// q.) Reverse a number using recursion
+
+// class Main {
+// static int reverse = 0;
+
+// static void reverseNum(int n) {
+// if (n == 0) {
+// return;
+// }
+
+// int digit = n % 10;
+// reverse = reverse * 10 + digit;
+// reverseNum(n / 10);
+// }
+
+// public static void main(String[] args) {
+// System.out.println(reverseNum(1234));
+// }
+// }
+
+// q.) check palindrome simple
+
+// class Main {
+// public static void main(String args[]) {
+// int n = 1210;
+// int rev = 0;
+// // int temp = n;
+// int Original = n;
+// while (n != 0) {
+// int digit = n % 10;
+// rev = rev * 10 + digit;
+// n = n / 10;
+// }
+// if (rev == Original) {
+// System.out.println("yes");
+// } else {
+// System.out.println("No");
+// }
+// }
+// }
+
+// q.) check palindrome using recursion
+
+// class Main {
+
+// static int reverse(int n, int rev) {
+// if (n == 0) {
+// return rev;
+// }
+// return reverse(n / 10, rev * 10 + n % 10);
+// }
+
+// static boolean isPalindrome(int n) {
+// return n == reverse(n, 0);
+// }
+
+// public static void main(String[] args) {
+// int num = 121;
+
+// if (isPalindrome(num)) {
+// System.out.println("Palindrome");
+// } else {
+// System.out.println("Not Palindrome");
+// }
+// }
+// }
+
+// q.) Count numbers of 0 in a number using recursion
+
+class Main {
+    static int count = 0;
+
+    static int count_zero(int n) {
+        if (n == 0) {
+            return count;
+        }
+        int digit = n % 10;
+        if (digit == 0) {
+            count++;
+        }
+        count_zero(n / 10);
+        return count;
+    }
+
+    public static void main(String args[]) {
+        int ans = count_zero(10203040);
+        System.out.println(ans);
+    }
+}
