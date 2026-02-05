@@ -129,9 +129,10 @@ import java.util.Scanner;
 
 // class Codechef {
 // static int binarySearch(int arr[], int target, int st, int end) {
-// if (st > end) {
+// if (st > end) { // st to hmesha chota h end se
 // return -1;
 // }
+
 // int mid = st + (end - st) / 2;
 
 // if (arr[mid] == target) {
@@ -377,23 +378,23 @@ import java.util.Scanner;
 
 // q.) Count numbers of 0 in a number using recursion
 
-class Main {
-    static int count = 0;
+// class Main {
+// static int count = 0;
 
-    static int count_zero(int n) {
-        if (n == 0) {
-            return count;
-        }
-        int digit = n % 10;
-        if (digit == 0) {
-            count++;
-        }
-        count_zero(n / 10);
-        return count;
-    }
+// static int count_zero(int n) {
+// if (n == 0) {
+// return count;
+// }
+// int digit = n % 10;
+// if (digit == 0) {
+// count++;
+// }
+// count_zero(n / 10);
+// return count;
+// }
 
-    public static void main(String args[]) {
-        int ans = count_zero(10203040);
-        System.out.println(ans);
-    }
-}
+// public static void main(String args[]) {
+// int ans = count_zero(10203040);
+// System.out.println(ans);
+// }
+// }
