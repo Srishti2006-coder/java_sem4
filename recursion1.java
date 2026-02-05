@@ -101,7 +101,7 @@
 
 // q.) print nth fibonacci number
 
-import java.util.Scanner;
+// import java.util.Scanner;
 
 // class Main {
 // public static int fibonacci(int n) {
@@ -394,7 +394,7 @@ import java.util.Scanner;
 // }
 
 // public static void main(String args[]) {
-// int ans = count_zero(10203040);
+// int ans = count_zero(1020304000);
 // System.out.println(ans);
 // }
 // }
