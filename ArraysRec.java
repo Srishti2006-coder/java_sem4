@@ -30,47 +30,115 @@
 
 // 2.) checks if the target el is equal to which index
 
+// import java.util.ArrayList;
+
+// class Main {
+// static int find(int arr[], int target, int index) {
+// if (index == arr.length) {
+// return -1;
+// }
+// if (arr[index] == target) {
+// return index; // jis bhi idx pr vo element hai
+// } else {
+// return find(arr, target, index + 1);
+// }
+// }
+
+// static boolean findindex(int arr[], int target, int index) {
+// if (index == arr.length - 1) {
+// return false;
+// }
+// if (arr[index] == target) {
+// return true;
+// } else {
+// return findindex(arr, target, index + 1);
+// }
+// }
+
+// public static void main(String args[]) {
+// int arr[] = { 2, 56, 100, 190, 89, 190 };
+// int target = 190;
+// int result = find(arr, target, 0);
+// System.out.println(result);
+// }
+// }
+
+// 3.) finding index from last
+
+/*
+ * class Main {
+ * public static int findindex(int arr[],int target,int index)
+ * {
+ * if(index<0) return -1;
+ * if(arr[index]==target) return index;
+ * return (findindex(arr,target,index-1));
+ * }
+ * 
+ * public static void main(String[] args) {
+ * int[] arr={1,2,3,4,8,6,7};
+ * System.out.print(findindex(arr,7,arr.length-1));
+ * }
+ * }
+ */
+
+// 4.) linear search using arraylist
+
+// class Main {
+// public static void main(String[] args) {
+// int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
+// lastIndex(arr, 4, arr.length - 1);
+// System.out.print(list);
+// }
+
+// static ArrayList<Integer> list = new ArrayList<>();
+
+// static void lastIndex(int[] arr, int target, int index) {
+// if (index < 0)
+// return;
+// if (arr[index] == target)
+// list.add(index);
+// lastIndex(arr, target, index - 1);
+// }
+// }
+
+// 5.) when return type is void use Arraylist
+
 import java.util.ArrayList;
 
 class Main {
-    // static int find(int arr[], int target, int index) {
-    // if (index == arr.length) {
-    // return -1;
-    // }
-    // if (arr[index] == target) {
-    // return index; // jis bhi idx pr vo element hai
-    // } else {
-    // return find(arr, target, index + 1);
-    // }
-    // }
-
-    // static boolean findindex(int arr[], int target, int index) {
-    // if (index == arr.length - 1) {
-    // return false;
-    // }
-    // if (arr[index] == target) {
-    // return true;
-    // } else {
-    // return findindex(arr, target, index + 1);
-    // }
-    // }
-
     static ArrayList<Integer> list = new ArrayList<>();
 
-    static void findAllIndex(int arr[], int target, int index) {
+    static void find(int arr[], int target, int index) {
         if (index == arr.length) {
             return;
         }
         if (arr[index] == target) {
             list.add(index);
         }
-        findAllIndex(arr, target, index + 1);
+        find(arr, target, index + 1);
     }
 
     public static void main(String args[]) {
-        int arr[] = { 2, 56, 100, 190, 89 };
-        int target = 190;
-        findAllIndex(arr, target, 0);
+        int arr[] = { 12, 99, 90, 78, 65, 99, 100, 99 };
+        int target = 99;
+        find(arr, target, 0);
         System.out.println(list);
     }
 }
+
+// 5.) add all elements in arrayList
+// import java.util.*;
+// class Main {
+// static ArrayList<Integer> findAllIndex(int[] arr,int target,int
+// index,ArrayList<Integer> list)
+// {
+// if(index==arr.length) return list;
+// if(arr[index]==target) list.add(index);
+// return findAllIndex(arr,target,index+1,list);
+// }
+
+// public static void main(String[] args) {
+// int[] arr={1,2,3,4,5,4,6,7,4,8};
+// System.out.println(findAllIndex(arr,4,0,new ArrayList<>()));
+// }
+// }
