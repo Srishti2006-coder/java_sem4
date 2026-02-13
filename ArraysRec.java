@@ -99,7 +99,7 @@ class Main {
 
     public static void main(String[] args) {
         int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
-        lastIndex(arr, 4, arr.length - 1);
+        lastIndex(arr, 4, arr.length - 1); // last element
         System.out.print(list);
     }
 }
