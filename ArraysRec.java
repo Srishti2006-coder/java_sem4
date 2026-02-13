@@ -83,48 +83,51 @@
 
 // 4.) linear search using arraylist
 
-// class Main {
-// public static void main(String[] args) {
-// int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
-// lastIndex(arr, 4, arr.length - 1);
-// System.out.print(list);
-// }
-
-// static ArrayList<Integer> list = new ArrayList<>();
-
-// static void lastIndex(int[] arr, int target, int index) {
-// if (index < 0)
-// return;
-// if (arr[index] == target)
-// list.add(index);
-// lastIndex(arr, target, index - 1);
-// }
-// }
-
-// 5.) when return type is void use Arraylist
-
-import java.util.ArrayList;
+import java.util.*;
 
 class Main {
     static ArrayList<Integer> list = new ArrayList<>();
 
-    static void find(int arr[], int target, int index) {
-        if (index == arr.length) {
+    static void lastIndex(int[] arr, int target, int index) {
+        if (index < 0)
             return;
-        }
-        if (arr[index] == target) {
+
+        if (arr[index] == target)
             list.add(index);
-        }
-        find(arr, target, index + 1);
+        lastIndex(arr, target, index - 1); // -1 -1 hote 0 ko corss kr jaygea when it reaches -1 then it will return
     }
 
-    public static void main(String args[]) {
-        int arr[] = { 12, 99, 90, 78, 65, 99, 100, 99 };
-        int target = 99;
-        find(arr, target, 0);
-        System.out.println(list);
+    public static void main(String[] args) {
+        int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
+        lastIndex(arr, 4, arr.length - 1);
+        System.out.print(list);
     }
 }
+
+// 5.) when return type is void use Arraylist
+
+// import java.util.ArrayList;
+
+// class Main {
+// static ArrayList<Integer> list = new ArrayList<>();
+
+// static void find(int arr[], int target, int index) {
+// if (index == arr.length) {
+// return;
+// }
+// if (arr[index] == target) {
+// list.add(index);
+// }
+// find(arr, target, index + 1);
+// }
+
+// public static void main(String args[]) {
+// int arr[] = { 12, 99, 90, 78, 65, 99, 100, 99 };
+// int target = 99;
+// find(arr, target, 0);
+// System.out.println(list);
+// }
+// }
 
 // 5.) add all elements in arrayList
 // import java.util.*;
