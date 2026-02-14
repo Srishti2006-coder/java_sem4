@@ -63,54 +63,36 @@
 // }
 // }
 
-// 3.) finding index from last
-
-/*
- * class Main {
- * public static int findindex(int arr[],int target,int index)
- * {
- * if(index<0) return -1;
- * if(arr[index]==target) return index;
- * return (findindex(arr,target,index-1));
- * }
- * 
- * public static void main(String[] args) {
- * int[] arr={1,2,3,4,8,6,7};
- * System.out.print(findindex(arr,7,arr.length-1));
- * }
- * }
- */
-
-// 4.) linear search using arraylist
+// 3.) finding index from last by using arraylist
 
 import java.util.*;
 
-class Main {
-    static ArrayList<Integer> list = new ArrayList<>();
+// class Main {
+// static ArrayList<Integer> list = new ArrayList<>();
 
-    static void lastIndex(int[] arr, int target, int index) {
-        if (index < 0)
-            return;
+// static void lastIndex(int[] arr, int target, int index) {
+// if (index < 0)
+// return;
 
-        if (arr[index] == target)
-            list.add(index);
-        lastIndex(arr, target, index - 1); // -1 -1 hote 0 ko corss kr jaygea when it reaches -1 then it will return
-    }
+// if (arr[index] == target)
+// list.add(index);
+// lastIndex(arr, target, index - 1); // -1 -1 hote 0 ko corss kr jaygea when it
+// reaches -1 then it will return
+// }
 
-    public static void main(String[] args) {
-        int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
-        lastIndex(arr, 4, arr.length - 1); // last element
-        System.out.print(list);
-    }
-}
+// public static void main(String[] args) {
+// int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
+// lastIndex(arr, 4, arr.length - 1); // last element
+// System.out.print(list);
+// }
+// }
 
-// 5.) when return type is void use Arraylist
+// 4.) when return type is void use Arraylist
 
 // import java.util.ArrayList;
 
 // class Main {
 // static ArrayList<Integer> list = new ArrayList<>();
-
 // static void find(int arr[], int target, int index) {
 // if (index == arr.length) {
 // return;
@@ -130,18 +112,23 @@ class Main {
 // }
 
 // 5.) add all elements in arrayList
-// import java.util.*;
-// class Main {
-// static ArrayList<Integer> findAllIndex(int[] arr,int target,int
-// index,ArrayList<Integer> list)
-// {
-// if(index==arr.length) return list;
-// if(arr[index]==target) list.add(index);
-// return findAllIndex(arr,target,index+1,list);
-// }
 
-// public static void main(String[] args) {
-// int[] arr={1,2,3,4,5,4,6,7,4,8};
-// System.out.println(findAllIndex(arr,4,0,new ArrayList<>()));
-// }
-// }
+class Main {
+    static ArrayList<Integer> findAllIndex(int[] arr, int target, int index, ArrayList<Integer> list) { // paramter me
+                                                                                                        // empty
+                                                                                                        // arrayList bhi
+                                                                                                        // pass {arr,[]}
+        if (index == arr.length) {
+            return list; // return bhi list hi krege
+        }
+        if (arr[index] == target) {
+            list.add(index);
+        }
+        return findAllIndex(arr, target, index + 1, list); // pass by value by the reference
+    }
+
+    public static void main(String[] args) {
+        int[] arr = { 1, 2, 3, 4, 5, 4, 6, 7, 4, 8 };
+        System.out.println(findAllIndex(arr, 4, 0, new ArrayList<>())); // arguments
+    }
+}
