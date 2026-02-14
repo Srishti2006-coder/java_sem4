@@ -113,22 +113,51 @@ import java.util.*;
 
 // 5.) add all elements in arrayList
 
-class Main {
-    static ArrayList<Integer> findAllIndex(int[] arr, int target, int index, ArrayList<Integer> list) { // paramter me
-                                                                                                        // empty
-                                                                                                        // arrayList bhi
-                                                                                                        // pass {arr,[]}
-        if (index == arr.length) {
-            return list; // return bhi list hi krege
-        }
-        if (arr[index] == target) {
-            list.add(index);
-        }
-        return findAllIndex(arr, target, index + 1, list); // pass by value by the reference
-    }
+// class Main {
+// static ArrayList<Integer> findAllIndex(int[] arr, int target, int index,
+// ArrayList<Integer> list) {// {arr,[]}
+// if (index == arr.length) {
+// return list; // return bhi list hi krege
+// }
+// if (arr[index] == target) {
+// list.add(index);
+// }
+// return findAllIndex(arr, target, index + 1, list); // pass by value by the
+// reference
+// }
 
-    public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 5, 4, 6, 7, 4, 8 };
-        System.out.println(findAllIndex(arr, 4, 0, new ArrayList<>())); // arguments
-    }
-}
+// public static void main(String[] args) {
+// int[] arr = { 1, 2, 3, 4, 5, 4, 6, 7, 4, 8 };
+// // System.out.println(findAllIndex(arr, 4, 0, new ArrayList<>())); //
+// arguments
+// }
+// }
+
+// 6.) When all referencing var not pointing to the same obj then we can use
+// this approach
+// like when we going donwn the stack every time new list is being created with
+// updated ans not the same list is being updated with previous answers
+
+// class Main {
+// static ArrayList<Integer> findAllindex(int arr[], int target, int index,
+// ArrayList<Integer> list) {
+// // ArrayList<Integer> list = new ArrayList<>();
+
+// if (index == arr.length) {
+// return list;
+// }
+// if (arr[index] == target) {
+// list.add(index);
+// }
+// ArrayList<Integer> ansFromBelowCalls = findAllindex(arr, target, index + 1);
+// list.addAll(ansFromBelowCalls); // add all the elements of ansFromBelowCalls
+// to list
+// return list;
+// }
+
+// public static void main(String args[]) {
+// int arr[] = { 12, 99, 90, 78, 65, 99, 100, 99 };
+// int target = 99;
+// System.out.println(findAllindex(arr, target, 0));
+// }
+// }
