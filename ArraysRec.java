@@ -161,3 +161,9 @@ import java.util.*;
 // System.out.println(findAllindex(arr, target, 0));
 // }
 // }
+
+class Main {
+    public static void main(String args[]) {
+        System.out.println("Hello world");
+    }
+}
