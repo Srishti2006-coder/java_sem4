@@ -1,5 +1,5 @@
 
-// import java.util.*;
+import java.util.*;
 
 // 1.) Checks sorted or not
 
@@ -11,16 +11,18 @@
 // return arr[idx] < arr[idx + 1] && sorted(arr, idx + 1); // next idx se check
 // }
 
-// static boolean sorted(int arr[], int idx) {
-// if (idx == arr.length - 1) {
-// return true;
-// }
-
-// if (arr[idx] >= arr[idx + 1]) {
-// return false;
-// }
-// return sorted(arr, idx + 1);
-// }
+// /*
+// * static boolean sorted(int arr[], int idx) {
+// * if (idx == arr.length - 1) {
+// * return true;
+// * }
+// *
+// * if (arr[idx] >= arr[idx + 1]) {
+// * return false;
+// * }
+// * return sorted(arr, idx + 1);
+// * }
+// */
 
 // public static void main(String args[]) {
 // int arr[] = { 12, 300, 890 };
@@ -28,13 +30,12 @@
 // }
 // }
 
-// 2.) checks if the target el is equal to which index
-
-// import java.util.ArrayList;
+// 2.) checks from front if the target el is equal to which index and return its
+// index
 
 // class Main {
-// static int find(int arr[], int target, int index) {
-// if (index == arr.length) {
+// static int find(int arr[], int target, int index) { // static int hai
+// if (index == arr.length) { // last idx ke ek next mtlb array ke bhr
 // return -1;
 // }
 // if (arr[index] == target) {
@@ -44,50 +45,81 @@
 // }
 // }
 
-// static boolean findindex(int arr[], int target, int index) {
-// if (index == arr.length - 1) {
-// return false;
-// }
-// if (arr[index] == target) {
-// return true;
-// } else {
-// return findindex(arr, target, index + 1);
-// }
-// }
-
 // public static void main(String args[]) {
-// int arr[] = { 2, 56, 100, 190, 89, 190 };
+// int arr[] = { 2, 56, 190, 100, 89, 190 };
 // int target = 190;
-// int result = find(arr, target, 0);
+// int result = find(arr, target, 0); // front se check
+// // int result = find(arr, target, arr.length - 1); // back se check
 // System.out.println(result);
 // }
 // }
 
-// 3.) finding index from last by using arraylist
-
-import java.util.*;
+// 3.) checks from back if the target el is equal to which index and return its
+// index
 
 // class Main {
-// static ArrayList<Integer> list = new ArrayList<>();
-
-// static void lastIndex(int[] arr, int target, int index) {
-// if (index < 0)
-// return;
-
-// if (arr[index] == target)
-// list.add(index);
-// lastIndex(arr, target, index - 1); // -1 -1 hote 0 ko corss kr jaygea when it
-// reaches -1 then it will return
+// static int find(int arr[], int target, int index) {
+// if (index < 0) {
+// return -1;
 // }
-
-// public static void main(String[] args) {
-// int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
-// lastIndex(arr, 4, arr.length - 1); // last element
-// System.out.print(list);
+// if (arr[index] == target) {
+// return index; // jis bhi idx pr vo element hai
+// } else {
+// return find(arr, target, index - 1); // -1 -1 -1 back back back
 // }
 // }
 
-// 4.) when return type is void use Arraylist
+// public static void main(String args[]) {
+// int arr[] = { 2, 56, 190, 100, 89, 190};
+// int target = 190;
+// int result = find(arr, target, arr.length-1); // back se check
+// System.out.println(result);
+// }
+// }
+
+/*
+ * @2nd method with boolean returs true /false
+ * 
+ * // static boolean findindex(int arr[], int target, int index) {
+ * // if (index == arr.length - 1) {
+ * // return false;
+ * // }
+ * // if (arr[index] == target) {
+ * // return true;
+ * // } else {
+ * // return findindex(arr, target, index + 1);
+ * // }
+ * // }
+ */
+
+// 3.) finding index from last by using arraylist
+
+// import java.util.*;
+
+/*
+ * class Main {
+ * static ArrayList<Integer> list = new ArrayList<>();
+ * 
+ * static void lastIndex(int[] arr, int target, int index) {
+ * if (index < 0)
+ * return;
+ * 
+ * if (arr[index] == target)
+ * list.add(index);
+ * lastIndex(arr, target, index - 1); // -1 -1 hote 0 ko corss kr jaygea when it
+ * reaches -1 then it will return
+ * }
+ * 
+ * public static void main(String[] args) {
+ * int[] arr = { 1, 4, 6, 7, 4, 8, 4 };
+ * lastIndex(arr, 4, arr.length - 1); // last element
+ * System.out.print(list);
+ * }
+ * }
+ */
+
+// 4.) Finding index from first and push them into a list return first apperance
+// idx not all index
 
 // import java.util.ArrayList;
 
@@ -128,8 +160,7 @@ import java.util.*;
 
 // public static void main(String[] args) {
 // int[] arr = { 1, 2, 3, 4, 5, 4, 6, 7, 4, 8 };
-// // System.out.println(findAllIndex(arr, 4, 0, new ArrayList<>())); //
-// arguments
+// System.out.println(findAllIndex(arr, 4, 0, new ArrayList<>())); // arguments
 // }
 // }
 
@@ -161,13 +192,3 @@ import java.util.*;
 // System.out.println(findAllindex(arr, target, 0));
 // }
 // }
-
-class Main {
-    public static void main(String args[]) {
-        // System.out.println("Hello world Hy ");
-        int a = 10;
-        int b = 90;
-        int sum = a + b;
-        System.out.println(sum);
-    }
-}
