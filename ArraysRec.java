@@ -207,3 +207,66 @@ import java.util.*;
  * // }
  * // }
  */
+
+// 9.) Rotated Binary Search
+
+/*
+ * // class Codechef {
+ * 
+ * // static int search(int arr[], int target, int st, int end) {
+ * 
+ * // // Base case
+ * // if (st > end) {
+ * // return -1;
+ * // }
+ * 
+ * // int mid = st + (end - st) / 2;
+ * 
+ * // // Target mil gaya
+ * // if (arr[mid] == target) {
+ * // return mid;
+ * // }
+ * 
+ * // // 🔹 Check karo kaunsa half sorted hai
+ * 
+ * // // Left half sorted
+ * // if (arr[st] <= arr[mid]) {
+ * 
+ * // // Target left range me hai?
+ * // if (target >= arr[st] && target < arr[mid]) {
+ * // return search(arr, target, st, mid - 1);
+ * // }
+ * // // Warna right me
+ * // else {
+ * // return search(arr, target, mid + 1, end);
+ * // }
+ * // }
+ * 
+ * // // 🔹 Right half sorted
+ * // else {
+ * 
+ * // // Target right range me hai?
+ * // if (target > arr[mid] && target <= arr[end]) {
+ * // return search(arr, target, mid + 1, end);
+ * // }
+ * // // Warna left me
+ * // else {
+ * // return search(arr, target, st, mid - 1);
+ * // }
+ * // }
+ * // }
+ * 
+ * // public static void main(String args[]) {
+ * 
+ * // int arr[] = { 4, 5, 6, 7, 0, 1, 2 };
+ * 
+ * // int target = 0;
+ * 
+ * // int result = search(arr, target, 0, arr.length - 1);
+ * 
+ * // System.out.println(result);
+ * // }
+ * // }
+ */
+
+// SORTING BEGINS HERE
