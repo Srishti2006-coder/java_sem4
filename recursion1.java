@@ -127,29 +127,29 @@
 
 // q.) binary seaarch
 
-// class Codechef {
-// static int binarySearch(int arr[], int target, int st, int end) {
-// if (st > end) { // st to hmesha chota h end se
-// return -1;
-// }
+class Codechef {
+    static int binarySearch(int arr[], int target, int st, int end) {
+        if (end < st) { // st to hmesha chota h end se
+            return -1;
+        }
 
-// int mid = st + (end - st) / 2;
+        int mid = st + (end - st) / 2;
 
-// if (arr[mid] == target) {
-// return mid;
-// }
-// if (target > arr[mid]) {
-// return binarySearch(arr, target, mid + 1, end);
-// }
-// return binarySearch(arr, target, st, mid - 1);
-// }
+        if (arr[mid] == target) {
+            return mid;
+        }
+        if (target > arr[mid]) {
+            return binarySearch(arr, target, mid + 1, end);
+        }
+        return binarySearch(arr, target, st, mid - 1);
+    }
 
-// public static void main(String args[]) {
-// int arr[] = { 1, 34, 56, 78, 88, 90, 99 };
-// int target = 990;
-// System.out.println(binarySearch(arr, target, 0, arr.length - 1));
-// }
-// }
+    public static void main(String args[]) {
+        int arr[] = { 1, 34, 56, 78, 88, 90, 99 };
+        int target = 90;
+        System.out.println(binarySearch(arr, target, 0, arr.length - 1));
+    }
+}
 
 // import java.util.*;
 
