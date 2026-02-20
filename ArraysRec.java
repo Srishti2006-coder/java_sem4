@@ -212,9 +212,7 @@
 
 /*
  * // class Codechef {
- * 
  * // static int search(int arr[], int target, int st, int end) {
- * 
  * // // Base case
  * // if (st > end) {
  * // return -1;
@@ -243,13 +241,12 @@
  * // }
  * 
  * // // 🔹 Right half sorted
- * // else {
  * 
+ * // else {
  * // // Target right range me hai?
  * // if (target > arr[mid] && target <= arr[end]) {
  * // return search(arr, target, mid + 1, end);
  * // }
- * // // Warna left me
  * // else {
  * // return search(arr, target, st, mid - 1);
  * // }
@@ -354,34 +351,90 @@
 
 // 11.) Selection sort 
 
+// class Main {
+//     static void SelectionSort(int arr[], int n, int index) {
+//         if (index == n - 1) { // n = 5 and , index == 4 it means last element already sorted
+//             return; // beacause small elements move towards left thereferore larger one rest beside
+//         }
+
+//         int minIndex = index;
+
+//         for (int i = index + 1; i < n; i++) {
+//             if (arr[i] < arr[minIndex]) {
+//                 minIndex = i;
+//             }
+//         }
+//         int temp = arr[index];
+//         arr[index] = arr[minIndex];
+//         arr[minIndex] = temp;
+
+//         SelectionSort(arr, n, index + 1);
+//     }
+
+//     public static void main(String args[]) {
+//         int arr[] = { 5, 3, 8, 4, 2 };
+//         int n = arr.length;
+
+//         SelectionSort(arr, n, 0);
+
+//         for (int i = 0; i < n; i++) {
+//             System.out.print(arr[i] + " ");
+//         }
+//     }
+// }\
+
+//12.) Merge sort 
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
 class Main {
-    static void SelectionSort(int arr[], int n, int index) {
-        if (index == n - 1) { // n = 5 and , index == 4 it means last element already sorted
-            return; // beacause small elements move towards left thereferore larger one rest beside
+    public static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) {
+            return arr;
         }
+        int mid = arr.length / 2;
 
-        int minIndex = index;
+        int left[] = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+        int right[] = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
 
-        for (int i = index + 1; i < n; i++) {
-            if (arr[i] < arr[minIndex]) {
-                minIndex = i;
+        return merge(left, right);
+    }
+
+    public static int[] merge(int left[], int right[]) {
+        int mix[] = new int[left.length + right.length];
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+                mix[k] = left[i];
+                i++;
+            } else {
+                mix[k] = right[j];
+                j++;
             }
+            k++;
         }
-        int temp = arr[index];
-        arr[index] = arr[minIndex];
-        arr[minIndex] = temp;
 
-        SelectionSort(arr, n, index + 1);
+        while (i < left.length) {
+            mix[k] = left[i];
+            i++;
+            k++;
+        }
+        while (j < right.length) {
+            mix[k] = right[j];
+            j++;
+            k++;
+        }
+        return mix;
     }
 
     public static void main(String args[]) {
-        int arr[] = { 5, 3, 8, 4, 2 };
-        int n = arr.length;
-
-        SelectionSort(arr, n, 0);
-
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
-        }
+        int[] arr = { 8, 3, 4, 12, 6, };
+        arr = mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
