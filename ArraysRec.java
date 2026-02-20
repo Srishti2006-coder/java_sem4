@@ -1,5 +1,5 @@
 
-import java.util.*;
+// import java.util.*;
 
 // 1.) Checks sorted or not
 
@@ -273,46 +273,12 @@ import java.util.*;
 
 // import java.util.Scanner;
 
-// 10.) Bubble sort 
-
-class Main {
-
-    static void bubbleSort(int arr[], int n) {
-        if (n == 1) { // if arr me 1 element h that means arr sorted hai
-            return;
-        }
-
-        for (int i = 0; i < n - 1; i++) {
-            if (arr[i] > arr[i + 1]) {
-                int temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
-            }
-        }
-        bubbleSort(arr, n - 1); // recursive call
-        // last elment sort ho chuka and the largest element reaches at its position
-        // therefore we check with next recursive call n-1
-        // n = 5, 4, 3 and at last when n reaches 1 then return
-    }
-
-    public static void main(String[] args) {
-        int arr[] = { 5, 3, 8, 4, 2 };
-
-        bubbleSort(arr, arr.length);
-
-        System.out.println("Sorted array:");
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
-        }
-    }
-}
-
-// import java.util.Scanner;
+// 10.) Bubble sort
 
 // class Main {
 
 // static void bubbleSort(int arr[], int n) {
-// if (n == 1) {
+// if (n == 1) { // if arr me 1 element h that means arr sorted hai
 // return;
 // }
 
@@ -323,29 +289,99 @@ class Main {
 // arr[i + 1] = temp;
 // }
 // }
-
-// bubbleSort(arr, n - 1);
+// bubbleSort(arr, n - 1); // recursive call
+// // last elment sort ho chuka and the largest element reaches at its position
+// // therefore we check with next recursive call n-1
+// // n = 5, 4, 3 and at last when n reaches 1 then return
 // }
 
-// public static void main(String args[]) {
+// public static void main(String[] args) {
+// int arr[] = { 5, 3, 8, 4, 2 };
 
-// Scanner sc = new Scanner(System.in);
-
-// System.out.println("Enter size:");
-// int n = sc.nextInt();
-
-// int arr[] = new int[n];
-
-// System.out.println("Enter elements:");
-// for (int i = 0; i < n; i++) {
-// arr[i] = sc.nextInt();
-// }
-
-// bubbleSort(arr, n);
+// bubbleSort(arr, arr.length);
 
 // System.out.println("Sorted array:");
-// for (int i = 0; i < n; i++) {
+// for (int i = 0; i < arr.length; i++) {
 // System.out.print(arr[i] + " ");
 // }
 // }
 // }
+
+// import java.util.Scanner;
+
+/*
+ * class Main {
+ * 
+ * static void bubbleSort(int arr[], int n) {
+ * if (n == 1) {
+ * return;
+ * }
+ * 
+ * for (int i = 0; i < n - 1; i++) {
+ * if (arr[i] > arr[i + 1]) {
+ * int temp = arr[i];
+ * arr[i] = arr[i + 1];
+ * arr[i + 1] = temp;
+ * }
+ * }
+ * 
+ * bubbleSort(arr, n - 1);
+ * }
+ * 
+ * public static void main(String args[]) {
+ * 
+ * Scanner sc = new Scanner(System.in);
+ * 
+ * System.out.println("Enter size:");
+ * int n = sc.nextInt();
+ * 
+ * int arr[] = new int[n];
+ * 
+ * System.out.println("Enter elements:");
+ * for (int i = 0; i < n; i++) {
+ * arr[i] = sc.nextInt();
+ * }
+ * 
+ * bubbleSort(arr, n);
+ * 
+ * System.out.println("Sorted array:");
+ * for (int i = 0; i < n; i++) { // i = arr.length
+ * System.out.print(arr[i] + " ");
+ * }
+ * }
+ * }
+ */
+
+// 11.) Selection sort 
+
+class Main {
+    static void SelectionSort(int arr[], int n, int index) {
+        if (index == n - 1) { // n = 5 and , index == 4 it means last element already sorted
+            return; // beacause small elements move towards left thereferore larger one rest beside
+        }
+
+        int minIndex = index;
+
+        for (int i = index + 1; i < n; i++) {
+            if (arr[i] < arr[minIndex]) {
+                minIndex = i;
+            }
+        }
+        int temp = arr[index];
+        arr[index] = arr[minIndex];
+        arr[minIndex] = temp;
+
+        SelectionSort(arr, n, index + 1);
+    }
+
+    public static void main(String args[]) {
+        int arr[] = { 5, 3, 8, 4, 2 };
+        int n = arr.length;
+
+        SelectionSort(arr, n, 0);
+
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
