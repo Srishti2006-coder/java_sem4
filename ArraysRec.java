@@ -384,87 +384,85 @@
 // }\
 
 //12.) Merge sort 
+
 import java.util.*;
-import java.lang.*;
-import java.io.*;
 
-// class Main {
-//     public static int[] mergeSort(int[] arr) {
-//         if (arr.length == 1) {
-//             return arr;
-//         }
-//         int mid = arr.length / 2;
+/*class Main {
+    public static int[] mergeSort(int[] arr) {
+        if (arr.length == 1) {
+            return arr;
+        }
+        int mid = arr.length / 2;
 
-//         int left[] = mergeSort(Arrays.copyOfRange(arr, 0, mid));
-//         int right[] = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+        int left[] = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+        int right[] = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
 
-//         return merge(left, right);
-//     }
+        return merge(left, right);
+    }
 
-//     public static int[] merge(int left[], int right[]) {
-//         int mix[] = new int[left.length + right.length];
+    public static int[] merge(int left[], int right[]) {
+        int mix[] = new int[left.length + right.length];
 
-//         int i = 0;
-//         int j = 0;
-//         int k = 0;
+        int i = 0;
+        int j = 0;
+        int k = 0;
 
-//         while (i < left.length && j < right.length) {
-//             if (left[i] < right[j]) {
-//                 mix[k] = left[i];
-//                 i++;
-//             } else {
-//                 mix[k] = right[j];
-//                 j++;
-//             }
-//             k++;
-//         }
+        while (i < left.length && j < right.length) {
+            if (left[i] < right[j]) {
+                mix[k] = left[i];
+                i++;
+            } else {
+                mix[k] = right[j];
+                j++;
+            }
+            k++;
+        }
 
-//         while (i < left.length) {
-//             mix[k] = left[i];
-//             i++;
-//             k++;
-//         }
-//         while (j < right.length) {
-//             mix[k] = right[j];
-//             j++;
-//             k++;
-//         }
-//         return mix;
-//     }
+        while (i < left.length) {
+            mix[k] = left[i];
+            i++;
+            k++;
+        }
+        while (j < right.length) {
+            mix[k] = right[j];
+            j++;
+            k++;
+        }
+        return mix;
+    }
 
-//     public static void main(String args[]) {
+    public static void main(String args[]) {
 
-//         int[] arr = { 8, 3, 4, 12, 6, };
-//         arr = mergeSort(arr);
-//         System.out.println(Arrays.toString(arr));
-//     }
-// }
+        int[] arr = { 8, 3, 4, 12, 6, };
+        arr = mergeSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+}  */
 
-//ques 26 : merge sort in place
-import java.util.*;
+// ques 26 : merge sort in place
 
 class Main {
-    public static void main(String[] args) {
-        int[] arr = { 8, 3, 4, 12, 5, 6 };
-        mergeSortInPlace(arr, 0, arr.length - 1);
-        System.out.print(Arrays.toString(arr));
-    }
 
     public static void mergeSortInPlace(int[] arr, int s, int e) {
         if (s >= e)
             return;
+
         int mid = s + (e - s) / 2;
 
         mergeSortInPlace(arr, s, mid);
         mergeSortInPlace(arr, mid + 1, e);
+
         merge(arr, s, mid, e);
     }
 
     public static void merge(int[] arr, int s, int mid, int e) {
+
         int[] mix = new int[e - s + 1];
+
         int i = s;
         int j = mid + 1;
         int k = 0;
+
         while (i <= mid && j <= e) {
             if (arr[i] < arr[j]) {
                 mix[k] = arr[i];
@@ -475,8 +473,8 @@ class Main {
             }
             k++;
         }
-        // It may be possible that one of array will reach till end and elements of
-        // other arrays are not inserted in mix array completely
+
+        // Remaining elements
 
         while (i <= mid) {
             mix[k] = arr[i];
@@ -489,10 +487,18 @@ class Main {
             j++;
             k++;
         }
-        // either one of the above loop will be true
+
+        // Copy back to original array
 
         for (int l = 0; l < mix.length; l++) {
             arr[s + l] = mix[l];
         }
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = { 8, 3, 4, 12, 5, 6 };
+        mergeSortInPlace(arr, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr));
     }
 }
