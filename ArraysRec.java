@@ -441,64 +441,107 @@ import java.util.*;
 
 // ques 26 : merge sort in place
 
-class Main {
+// class Main {
 
-    public static void mergeSortInPlace(int[] arr, int s, int e) {
-        if (s >= e)
+//     public static void mergeSortInPlace(int[] arr, int s, int e) {
+//         if (s >= e)
+//             return;
+
+//         int mid = s + (e - s) / 2;
+
+//         mergeSortInPlace(arr, s, mid);
+//         mergeSortInPlace(arr, mid + 1, e);
+
+//         merge(arr, s, mid, e);
+//     }
+
+//     public static void merge(int[] arr, int s, int mid, int e) {
+
+//         int[] mix = new int[e - s + 1];
+
+//         int i = s;
+//         int j = mid + 1;
+//         int k = 0;
+
+//         while (i <= mid && j <= e) {
+//             if (arr[i] < arr[j]) {
+//                 mix[k] = arr[i];
+//                 i++;
+//             } else {
+//                 mix[k] = arr[j];
+//                 j++;
+//             }
+//             k++;
+//         }
+
+//         // Remaining elements
+
+//         while (i <= mid) {
+//             mix[k] = arr[i];
+//             i++;
+//             k++;
+//         }
+
+//         while (j <= e) {
+//             mix[k] = arr[j];
+//             j++;
+//             k++;
+//         }
+
+//         // Copy back to original array
+
+//         for (int l = 0; l < mix.length; l++) {
+//             arr[s + l] = mix[l];
+//         }
+//     }
+
+//     public static void main(String[] args) {
+
+//         int[] arr = { 8, 3, 4, 12, 5, 6 };
+//         mergeSortInPlace(arr, 0, arr.length - 1);
+//         System.out.println(Arrays.toString(arr));
+//     }
+// }
+
+// Ques 27 .) Quick Sort 
+
+class Main {
+    public static void sort(int arr[], int low, int high) {
+        if (low >= high) {
             return;
+        }
+
+        int s = low;
+        int e = high;
 
         int mid = s + (e - s) / 2;
+        int pivot = arr[mid];
 
-        mergeSortInPlace(arr, s, mid);
-        mergeSortInPlace(arr, mid + 1, e);
-
-        merge(arr, s, mid, e);
-    }
-
-    public static void merge(int[] arr, int s, int mid, int e) {
-
-        int[] mix = new int[e - s + 1];
-
-        int i = s;
-        int j = mid + 1;
-        int k = 0;
-
-        while (i <= mid && j <= e) {
-            if (arr[i] < arr[j]) {
-                mix[k] = arr[i];
-                i++;
-            } else {
-                mix[k] = arr[j];
-                j++;
+        while (s <= e) {
+            while (arr[s] < pivot) {
+                s++;
             }
-            k++;
+            while (arr[e] > pivot) {
+                e--;
+            }
+            if (s <= e) {
+                // agar pivot shi position pr nah ho to Swap
+                // Kyuki jab tak s aur e cross nhi hue tab tak swap is not possible
+                // and wo dono mein se koi bhi while cond ko satisfy nhi kr paate
+                int temp = arr[s];
+                arr[s] = arr[e];
+                arr[e] = temp;
+                s++;
+                e--;
+            }
         }
-
-        // Remaining elements
-
-        while (i <= mid) {
-            mix[k] = arr[i];
-            i++;
-            k++;
-        }
-
-        while (j <= e) {
-            mix[k] = arr[j];
-            j++;
-            k++;
-        }
-
-        // Copy back to original array
-
-        for (int l = 0; l < mix.length; l++) {
-            arr[s + l] = mix[l];
-        }
+        sort(arr, low, e); // pivot k left side where low fixed hai e as a poninte
+        sort(arr, s, high); // pivot k right side where high fixed hai s as a pointer
     }
 
     public static void main(String[] args) {
-
-        int[] arr = { 8, 3, 4, 12, 5, 6 };
-        mergeSortInPlace(arr, 0, arr.length - 1);
+        int[] arr = { 5, 4, 3, 2, 1 };
+        sort(arr, 0, arr.length - 1);
         System.out.println(Arrays.toString(arr));
     }
 }
