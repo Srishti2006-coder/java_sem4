@@ -134,33 +134,37 @@
 
 // q.) 9. find unique element
 
-/*class Main {
-    public static void main(String[] args) {
-        int[] arr = { 1, 2, 3, 4, 3, 5, 2, 5, 1 };
-        int ans = 0;
-        for (int num : arr) {
-            ans ^= num;
-        }
-        System.out.println(ans);
-    }
-} */
+/*
+ * class Main {
+ * public static void main(String[] args) {
+ * int[] arr = { 1, 2, 3, 4, 3, 5, 2, 5, 1 };
+ * int ans = 0;
+ * for (int num : arr) {
+ * ans ^= num;
+ * }
+ * System.out.println(ans);
+ * }
+ * }
+ */
 
 // q.) 10. //ques - find missing number in array
 
-class Main {
-    public static void main(String[] args) {
-        int n = 5;// length of array
-        int[] arr = { 0, 1, 3, 4, 5 };// start from 0 to n but 2 is missing
-        int ans = 0;
-        for (int i = 0; i <= n; i++) {
-            ans ^= i;
-        }
-        for (int num : arr) {
-            ans ^= num;
-        }
-        System.out.print(ans);
-    }
-}
+/*
+ * class Main {
+ * public static void main(String[] args) {
+ * int n = 5;// length of array
+ * int[] arr = { 0, 1, 3, 4, 5 };// start from 0 to n but 2 is missing
+ * int ans = 0;
+ * for (int i = 0; i <= n; i++) {
+ * ans ^= i;
+ * }
+ * for (int num : arr) {
+ * ans ^= num;
+ * }
+ * System.out.print(ans);
+ * }
+ * }
+ */
 
 // ques 11. - power set
 
