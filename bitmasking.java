@@ -105,12 +105,23 @@
 
 // q.) 7. Clear ith Bit
 
-class Main {
+/*class Main {
     public static void main(String args[]) {
         int n = 5; // 0101
         int i = 2;
         n = n & ~(1 << i); // 0001
         System.out.println(n);
 
+    }
+}  */
+
+// q.) 8. toggle ith bit
+
+class Main {
+    public static void main(String[] args) {
+        int n = 5; // 0101
+        int i = 3; // 1 -> 0 and 0 -> 1
+        n = n ^ (1 << i);// 1101
+        System.out.println(n);
     }
 }
