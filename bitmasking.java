@@ -94,11 +94,23 @@
 
 // q.) 6. Set ith Bit
 
-class Main {
+/*class Main {
     public static void main(String args[]) {
         int n = 5; // 0101
         int i = 1; // 1 idx bit agar 0 hai to set it to 1
         n = n | (1 << i); // 0111
         System.out.println(n);
+    }
+}*/
+
+// q.) 7. Clear ith Bit
+
+class Main {
+    public static void main(String args[]) {
+        int n = 5; // 0101
+        int i = 2;
+        n = n & ~(1 << i); // 0001
+        System.out.println(n);
+
     }
 }
