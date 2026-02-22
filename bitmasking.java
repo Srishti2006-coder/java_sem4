@@ -46,14 +46,46 @@
 
 // q.) 4. NOT Operator (~)
 
+/*
+ * class Main {
+ * public static void main(String[] args) {
+ * 
+ * int a = 5;
+ * 
+ * int result = ~a;
+ * 
+ * System.out.println("NOT = " + result);
+ * 
+ * }
+ * }
+ */
+
+/*
+ * class Main {
+ * public static void main(String[] args){
+ * 
+ * int a = 5;
+ * int b = 3;
+ * 
+ * System.out.println(a & b);
+ * System.out.println(a | b);
+ * System.out.println(a ^ b);
+ * System.out.println(~a);
+ * 
+ * }
+ * }
+ */
+
+// q.) 5. Application - Check ith bit
+
 class Main {
-    public static void main(String[] args) {
-
-        int a = 5;
-
-        int result = ~a;
-
-        System.out.println("NOT = " + result);
-
+    public static void main(String args[]) {
+        int n = 5; // 0101
+        int i = 2; // 3 idx
+        if ((n & (1 << i)) != 0) {
+            System.out.println("Bit is On : 1");
+        } else {
+            System.out.println("Bit is off : 0");
+        }
     }
 }
