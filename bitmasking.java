@@ -94,34 +94,53 @@
 
 // q.) 6. Set ith Bit
 
-/*class Main {
-    public static void main(String args[]) {
-        int n = 5; // 0101
-        int i = 1; // 1 idx bit agar 0 hai to set it to 1
-        n = n | (1 << i); // 0111
-        System.out.println(n);
-    }
-}*/
+/*
+ * class Main {
+ * public static void main(String args[]) {
+ * int n = 5; // 0101
+ * int i = 1; // 1 idx bit agar 0 hai to set it to 1
+ * n = n | (1 << i); // 0111
+ * System.out.println(n);
+ * }
+ * }
+ */
 
 // q.) 7. Clear ith Bit
 
-/*class Main {
-    public static void main(String args[]) {
-        int n = 5; // 0101
-        int i = 2;
-        n = n & ~(1 << i); // 0001
-        System.out.println(n);
-
-    }
-}  */
+/*
+ * class Main {
+ * public static void main(String args[]) {
+ * int n = 5; // 0101
+ * int i = 2;
+ * n = n & ~(1 << i); // 0001
+ * System.out.println(n);
+ * 
+ * }
+ * }
+ */
 
 // q.) 8. toggle ith bit
 
+/*
+ * class Main {
+ * public static void main(String[] args) {
+ * int n = 5; // 0101
+ * int i = 3; // 1 -> 0 and 0 -> 1
+ * n = n ^ (1 << i);// 1101
+ * System.out.println(n);
+ * }
+ * }
+ */
+
+// q.) 9. find unique element
+
 class Main {
     public static void main(String[] args) {
-        int n = 5; // 0101
-        int i = 3; // 1 -> 0 and 0 -> 1
-        n = n ^ (1 << i);// 1101
-        System.out.println(n);
+        int[] arr = { 1, 2, 3, 4, 3, 5, 2, 5, 1 };
+        int ans = 0;
+        for (int num : arr) {
+            ans ^= num;
+        }
+        System.out.println(ans);
     }
 }
