@@ -349,199 +349,205 @@
  * }
  */
 
-// 11.) Selection sort 
+// 11.) Selection sort
 
 // class Main {
-//     static void SelectionSort(int arr[], int n, int index) {
-//         if (index == n - 1) { // n = 5 and , index == 4 it means last element already sorted
-//             return; // beacause small elements move towards left thereferore larger one rest beside
-//         }
+// static void SelectionSort(int arr[], int n, int index) {
+// if (index == n - 1) { // n = 5 and , index == 4 it means last element already
+// sorted
+// return; // beacause small elements move towards left thereferore larger one
+// rest beside
+// }
 
-//         int minIndex = index;
+// int minIndex = index;
 
-//         for (int i = index + 1; i < n; i++) {
-//             if (arr[i] < arr[minIndex]) {
-//                 minIndex = i;
-//             }
-//         }
-//         int temp = arr[index];
-//         arr[index] = arr[minIndex];
-//         arr[minIndex] = temp;
+// for (int i = index + 1; i < n; i++) {
+// if (arr[i] < arr[minIndex]) {
+// minIndex = i;
+// }
+// }
+// int temp = arr[index];
+// arr[index] = arr[minIndex];
+// arr[minIndex] = temp;
 
-//         SelectionSort(arr, n, index + 1);
-//     }
+// SelectionSort(arr, n, index + 1);
+// }
 
-//     public static void main(String args[]) {
-//         int arr[] = { 5, 3, 8, 4, 2 };
-//         int n = arr.length;
+// public static void main(String args[]) {
+// int arr[] = { 5, 3, 8, 4, 2 };
+// int n = arr.length;
 
-//         SelectionSort(arr, n, 0);
+// SelectionSort(arr, n, 0);
 
-//         for (int i = 0; i < n; i++) {
-//             System.out.print(arr[i] + " ");
-//         }
-//     }
+// for (int i = 0; i < n; i++) {
+// System.out.print(arr[i] + " ");
+// }
+// }
 // }\
 
-//12.) Merge sort 
+// 12.) Merge sort
 
 import java.util.*;
 
-/*class Main {
-    public static int[] mergeSort(int[] arr) {
-        if (arr.length == 1) {
-            return arr;
-        }
-        int mid = arr.length / 2;
-
-        int left[] = mergeSort(Arrays.copyOfRange(arr, 0, mid));
-        int right[] = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
-
-        return merge(left, right);
-    }
-
-    public static int[] merge(int left[], int right[]) {
-        int mix[] = new int[left.length + right.length];
-
-        int i = 0;
-        int j = 0;
-        int k = 0;
-
-        while (i < left.length && j < right.length) {
-            if (left[i] < right[j]) {
-                mix[k] = left[i];
-                i++;
-            } else {
-                mix[k] = right[j];
-                j++;
-            }
-            k++;
-        }
-
-        while (i < left.length) {
-            mix[k] = left[i];
-            i++;
-            k++;
-        }
-        while (j < right.length) {
-            mix[k] = right[j];
-            j++;
-            k++;
-        }
-        return mix;
-    }
-
-    public static void main(String args[]) {
-
-        int[] arr = { 8, 3, 4, 12, 6, };
-        arr = mergeSort(arr);
-        System.out.println(Arrays.toString(arr));
-    }
-}  */
+/*
+ * class Main {
+ * public static int[] mergeSort(int[] arr) {
+ * if (arr.length == 1) {
+ * return arr;
+ * }
+ * int mid = arr.length / 2;
+ * 
+ * int left[] = mergeSort(Arrays.copyOfRange(arr, 0, mid));
+ * int right[] = mergeSort(Arrays.copyOfRange(arr, mid, arr.length));
+ * 
+ * return merge(left, right);
+ * }
+ * 
+ * public static int[] merge(int left[], int right[]) {
+ * int mix[] = new int[left.length + right.length];
+ * 
+ * int i = 0;
+ * int j = 0;
+ * int k = 0;
+ * 
+ * while (i < left.length && j < right.length) {
+ * if (left[i] < right[j]) {
+ * mix[k] = left[i];
+ * i++;
+ * } else {
+ * mix[k] = right[j];
+ * j++;
+ * }
+ * k++;
+ * }
+ * 
+ * while (i < left.length) {
+ * mix[k] = left[i];
+ * i++;
+ * k++;
+ * }
+ * while (j < right.length) {
+ * mix[k] = right[j];
+ * j++;
+ * k++;
+ * }
+ * return mix;
+ * }
+ * 
+ * public static void main(String args[]) {
+ * 
+ * int[] arr = { 8, 3, 4, 12, 6, };
+ * arr = mergeSort(arr);
+ * System.out.println(Arrays.toString(arr));
+ * }
+ * }
+ */
 
 // ques 26 : merge sort in place
 
 // class Main {
 
-//     public static void mergeSortInPlace(int[] arr, int s, int e) {
-//         if (s >= e)
-//             return;
+// public static void mergeSortInPlace(int[] arr, int s, int e) {
+// if (s >= e)
+// return;
 
-//         int mid = s + (e - s) / 2;
+// int mid = s + (e - s) / 2;
 
-//         mergeSortInPlace(arr, s, mid);
-//         mergeSortInPlace(arr, mid + 1, e);
+// mergeSortInPlace(arr, s, mid);
+// mergeSortInPlace(arr, mid + 1, e);
 
-//         merge(arr, s, mid, e);
-//     }
-
-//     public static void merge(int[] arr, int s, int mid, int e) {
-
-//         int[] mix = new int[e - s + 1];
-
-//         int i = s;
-//         int j = mid + 1;
-//         int k = 0;
-
-//         while (i <= mid && j <= e) {
-//             if (arr[i] < arr[j]) {
-//                 mix[k] = arr[i];
-//                 i++;
-//             } else {
-//                 mix[k] = arr[j];
-//                 j++;
-//             }
-//             k++;
-//         }
-
-//         // Remaining elements
-
-//         while (i <= mid) {
-//             mix[k] = arr[i];
-//             i++;
-//             k++;
-//         }
-
-//         while (j <= e) {
-//             mix[k] = arr[j];
-//             j++;
-//             k++;
-//         }
-
-//         // Copy back to original array
-
-//         for (int l = 0; l < mix.length; l++) {
-//             arr[s + l] = mix[l];
-//         }
-//     }
-
-//     public static void main(String[] args) {
-
-//         int[] arr = { 8, 3, 4, 12, 5, 6 };
-//         mergeSortInPlace(arr, 0, arr.length - 1);
-//         System.out.println(Arrays.toString(arr));
-//     }
+// merge(arr, s, mid, e);
 // }
 
-// Ques 27 .) Quick Sort 
+// public static void merge(int[] arr, int s, int mid, int e) {
 
-class Main {
-    public static void sort(int arr[], int low, int high) {
-        if (low >= high) {
-            return;
-        }
+// int[] mix = new int[e - s + 1];
 
-        int s = low;
-        int e = high;
+// int i = s;
+// int j = mid + 1;
+// int k = 0;
 
-        int mid = s + (e - s) / 2;
-        int pivot = arr[mid];
+// while (i <= mid && j <= e) {
+// if (arr[i] < arr[j]) {
+// mix[k] = arr[i];
+// i++;
+// } else {
+// mix[k] = arr[j];
+// j++;
+// }
+// k++;
+// }
 
-        while (s <= e) {
-            while (arr[s] < pivot) {
-                s++;
-            }
-            while (arr[e] > pivot) {
-                e--;
-            }
-            if (s <= e) {
-                // agar pivot shi position pr nah ho to Swap
-                // Kyuki jab tak s aur e cross nhi hue tab tak swap is not possible
-                // and wo dono mein se koi bhi while cond ko satisfy nhi kr paate
-                int temp = arr[s];
-                arr[s] = arr[e];
-                arr[e] = temp;
-                s++;
-                e--;
-            }
-        }
-        sort(arr, low, e); // pivot k left side where low fixed hai e as a poninte
-        sort(arr, s, high); // pivot k right side where high fixed hai s as a pointer
-    }
+// // Remaining elements
 
-    public static void main(String[] args) {
-        int[] arr = { 5, 4, 3, 2, 1 };
-        sort(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
-    }
-}
+// while (i <= mid) {
+// mix[k] = arr[i];
+// i++;
+// k++;
+// }
+
+// while (j <= e) {
+// mix[k] = arr[j];
+// j++;
+// k++;
+// }
+
+// // Copy back to original array
+
+// for (int l = 0; l < mix.length; l++) {
+// arr[s + l] = mix[l];
+// }
+// }
+
+// public static void main(String[] args) {
+
+// int[] arr = { 8, 3, 4, 12, 5, 6 };
+// mergeSortInPlace(arr, 0, arr.length - 1);
+// System.out.println(Arrays.toString(arr));
+// }
+// }
+
+// Ques 27 .) Quick Sort
+
+/*
+ * class Main {
+ * public static void sort(int arr[], int low, int high) {
+ * if (low >= high) {
+ * return;
+ * }
+ * 
+ * int s = low;
+ * int e = high;
+ * 
+ * int mid = s + (e - s) / 2;
+ * int pivot = arr[mid];
+ * 
+ * while (s <= e) {
+ * while (arr[s] < pivot) {
+ * s++;
+ * }
+ * while (arr[e] > pivot) {
+ * e--;
+ * }
+ * if (s <= e) {
+ * // agar pivot shi position pr nah ho to Swap
+ * // Kyuki jab tak s aur e cross nhi hue tab tak swap is not possible
+ * // and wo dono mein se koi bhi while cond ko satisfy nhi kr paate
+ * int temp = arr[s];
+ * arr[s] = arr[e];
+ * arr[e] = temp;
+ * s++;
+ * e--;
+ * }
+ * }
+ * sort(arr, low, e); // pivot k left side where low fixed hai e as a poninte
+ * sort(arr, s, high); // pivot k right side where high fixed hai s as a pointer
+ * }
+ * 
+ * public static void main(String[] args) {
+ * int[] arr = { 5, 4, 3, 2, 1 };
+ * sort(arr, 0, arr.length - 1);
+ * System.out.println(Arrays.toString(arr));
+ * }
+ * }
+ */
