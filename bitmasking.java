@@ -208,21 +208,53 @@
 
 // Ques 13.) Case 1: Every number appears twice except one
 
-class Main {
+/*
+ * class Main {
+ * 
+ * static int uniqueNumber(int arr[]) {
+ * int ans = 0;
+ * 
+ * for (int i = 0; i < arr.length; i++) {
+ * ans = ans ^ arr[i];
+ * }
+ * 
+ * return ans;
+ * }
+ * 
+ * public static void main(String args[]) {
+ * int arr[] = { 2, 3, 2, 4, 3 };
+ * 
+ * System.out.println(uniqueNumber(arr));
+ * }
+ * }
+ */
 
-    static int uniqueNumber(int arr[]) {
-        int ans = 0;
+// Ques 14.) Case 2: Every number appears thrice except one
 
-        for (int i = 0; i < arr.length; i++) {
-            ans = ans ^ arr[i];
-        }
+/*
+ * class Main {
+ * 
+ * static int uniqueNumber(int arr[]) {
+ * int result = 0;
+ * for (int i = 0; i < 32; i++) {
+ * int sum = 0;
+ * for (int j = 0; j < arr.length; j++) {
+ * if ((arr[j] & (1 << i)) != 0) {
+ * sum++;
+ * }
+ * }
+ * if (sum % 3 != 0) {
+ * result |= (1 << i);
+ * }
+ * }
+ * return result;
+ * }
+ * 
+ * public static void main(String args[]) {
+ * int arr[] = { 2, 2, 3, 2 };
+ * System.out.println(uniqueNumber(arr));
+ * }
+ * }
+ */
 
-        return ans;
-    }
-
-    public static void main(String args[]) {
-        int arr[] = { 2, 3, 2, 4, 3 };
-
-        System.out.println(uniqueNumber(arr));
-    }
-}
+// Ques 15.) Case 3: Every number appears k times except one
