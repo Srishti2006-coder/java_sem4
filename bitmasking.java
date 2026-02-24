@@ -205,3 +205,24 @@
  * }
  * }
  */
+
+// Ques 13.) Case 1: Every number appears twice except one
+
+class Main {
+
+    static int uniqueNumber(int arr[]) {
+        int ans = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            ans = ans ^ arr[i];
+        }
+
+        return ans;
+    }
+
+    public static void main(String args[]) {
+        int arr[] = { 2, 3, 2, 4, 3 };
+
+        System.out.println(uniqueNumber(arr));
+    }
+}
