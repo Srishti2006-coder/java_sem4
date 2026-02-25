@@ -258,3 +258,61 @@
  */
 
 // Ques 15.) Case 3: Every number appears k times except one
+
+/* // class Main {
+
+//     static int uniqueNumber(int arr[], int k)
+//     {
+//         int ans = 0;
+
+//         for(int bit=0; bit<32; bit++)
+//         {
+//             int count=0;
+
+//             for(int i=0;i<arr.length;i++)
+//             {
+//                 if((arr[i] & (1<<bit))!=0)
+//                 count++;
+//             }
+
+//             if(count%k!=0)
+//             ans = ans | (1<<bit);
+//         }
+
+//         return ans;
+//     }
+
+//     public static void main(String args[])
+//     {
+//         int arr[] = {6,6,6,9};
+
+//         System.out.println(uniqueNumber(arr,3));
+//     }
+// }  */
+
+// ques 16.) Missing number in array
+
+class Main {
+    static int missingNum(int arr[]) {
+        int xor1 = 0;
+        int xor2 = 0;
+
+        // XOR 1 to arr.length + 1
+        for (int i = 1; i <= arr.length + 1; i++) {
+            xor1 = xor1 ^ i;
+        }
+
+        // XOR all elements in the array
+        for (int i = 0; i < arr.length; i++) {
+            xor2 = xor2 ^ arr[i];
+        }
+
+        // The missing number is the XOR of both values
+        return xor1 ^ xor2;
+    }
+
+    public static void main(String args[]) {
+        int arr[] = { 0, 1, 2, 4, 5 };
+        System.out.println(missingNum(arr));
+    }
+}
