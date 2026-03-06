@@ -216,35 +216,35 @@ import java.util.*;
 // ● Class C extends B
 // Call methods from all levels
 
-// class A {
+class A {
 
-// void methodA() {
-// System.out.println("Method from A");
-// }
-// }
+    void methodA() {
+        System.out.println("Method from A");
+    }
+}
 
-// class B extends A {
+class B extends A {
 
-// void methodB() {
-// System.out.println("Method from B");
-// }
-// }
+    void methodB() {
+        System.out.println("Method from B");
+    }
+}
 
-// class C extends B {
+class C extends B {
 
-// void methodC() {
-// System.out.println("Method from C");
-// }
+    void methodC() {
+        System.out.println("Method from C");
+    }
 
-// public static void main(String args[]) {
+    public static void main(String args[]) {
 
-// C obj = new C();
+        C obj = new C();
 
-// obj.methodA();
-// obj.methodB();
-// obj.methodC();
-// }
-// }
+        obj.methodA();
+        obj.methodB();
+        obj.methodC();
+    }
+}
 
 /*
  * class Shape {
