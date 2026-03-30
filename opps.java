@@ -369,40 +369,68 @@
 
 // 10.) Const overloading example with default const 
 
+// class Demo {
+
+//     // Method 1: no arguments
+//     void add() {
+//         int a = 10;
+//         int b = 20;
+//         int sum = a + b;
+//         System.out.println("Sum of 2 integers: " + sum);
+//     }
+
+//     void addThree() {
+//         int a = 1;
+//         int b = 2;
+//         int c = 3;
+//         int sum = a + b + c;
+//         System.out.println("Sum of 3 integers: " + sum);
+//     }
+
+//     void addDouble() {
+//         double a = 2.5;
+//         double b = 3.5;
+//         double sum = a + b;
+//         System.out.println("Sum of 2 doubles: " + sum);
+//     }
+
+//     // display method
+//     void display() {
+//         add(); // calling method 1
+//         addThree(); // calling method 2
+//         addDouble(); // calling method 3
+//     }
+
+//     public static void main(String args[]) {
+//         Demo obj = new Demo();
+//         obj.display(); // only one call
+//     }
+// }
+
+// 11.) Final keyword example
+
+// class Demo {
+//     final int x = 100;
+
+//     void show (){ 
+//         x = 90;      // gives an error because x is final and cannot be changed
+//         System.out.println(x);
+//     }
+//     public static void main (String args[]){
+//         Demo s1 = new Demo();
+//         s1.show();
+//     }
+// }
+
 class Demo {
+    final int x = 100;
 
-    // Method 1: no arguments
-    void add() {
-        int a = 10;
-        int b = 20;
-        int sum = a + b;
-        System.out.println("Sum of 2 integers: " + sum);
-    }
-
-    void addThree() {
-        int a = 1;
-        int b = 2;
-        int c = 3;
-        int sum = a + b + c;
-        System.out.println("Sum of 3 integers: " + sum);
-    }
-
-    void addDouble() {
-        double a = 2.5;
-        double b = 3.5;
-        double sum = a + b;
-        System.out.println("Sum of 2 doubles: " + sum);
-    }
-
-    // display method
-    void display() {
-        add(); // calling method 1
-        addThree(); // calling method 2
-        addDouble(); // calling method 3
+    void show() {
+        System.out.println(x);
     }
 
     public static void main(String args[]) {
-        Demo obj = new Demo();
-        obj.display(); // only one call
+        Demo s1 = new Demo();
+        s1.show();
     }
 }
