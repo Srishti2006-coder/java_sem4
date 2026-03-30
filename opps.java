@@ -227,24 +227,66 @@
 
 // 6.) Constructor example without set value 
 
-class DummyClass {
+// class DummyClass {
 
-    int length, width;
+//     int length, width;
 
-    DummyClass(int l, int w) {
-        length = l;
-        width = w;
+//     DummyClass(int l, int w) {
+//         length = l;
+//         width = w;
+//     }
+
+//     int area() {
+//         return (length * width);
+//     }
+// }
+
+// class Main {
+//     public static void main(String[] args) {
+//         DummyClass o1 = new DummyClass(4, 5); // Pass values as parametrized constructor
+//         // o1.setValues(5, 18); // Values passes to object o1
+//         System.out.println(o1.area());
+//     }
+// }
+
+// 7.) Constructor overloading example
+
+class Student {
+    String name;
+    int age;
+    double marks;
+
+    Student() {
+        name = "Srishti";
+        age = 20;
+        marks = 8.5;
     }
 
-    int area() {
-        return (length * width);
+    Student(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
-}
 
-class Main {
-    public static void main(String[] args) {
-        DummyClass o1 = new DummyClass(4, 5); // Pass values as parametrized constructor
-        // o1.setValues(5, 18); // Values passes to object o1
-        System.out.println(o1.area());
+    Student(String name, int age, double marks) {
+        this.name = name;
+        this.age = age;
+        this.marks = marks;
+    }
+
+    void display() {
+        System.out.println("Name is : " + name);
+        System.out.println("Age is : " + age);
+        System.out.println("Marks is : " + marks);
+    }
+
+    public static void main(String args[]) {
+        Student s1 = new Student();
+        Student s2 = new Student("cv", 88);
+        Student s3 = new Student("Shreya", 20, 8.5);
+        s1.display();
+        System.out.println("\n");
+        s2.display();
+        System.out.println("\n");
+        s3.display();
     }
 }
