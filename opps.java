@@ -292,4 +292,78 @@
 // }
 // }
 
-// 8.) Addition of
+// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method
+// overloading
+
+// class Student {
+
+// // Method 1
+// int add(int a, int b) { // method int add() not Student() because we are not
+// creating constructor here
+// return a + b;
+// }
+
+// // Method 2
+// int add(int a, int b, int c) {
+// return a + b + c;
+// }
+
+// // Method 3
+// double add(double a, double b) {
+// return a + b;
+// }
+
+// public static void main(String args[]) {
+// Student obj = new Student();
+
+// int result1 = obj.add(5, 3);
+// int result2 = obj.add(1, 2, 3);
+// double result3 = obj.add(2.5, 3.5);
+
+// System.out.println("Sum 1: " + result1);
+// System.out.println("Sum 2: " + result2);
+// System.out.println("Sum 3: " + result3);
+// }
+// }
+
+// 9.) Same example with constructor overloading
+
+class Student {
+    int a;
+    int b;
+    int c;
+    int add; // instance variable
+
+    Student() { // default const
+        int a = 8;
+        int b = 8;
+
+        add = a + b;
+    }
+
+    Student(int a, int b, int c) { // para const
+        this.a = a;
+        this.b = b;
+        this.c = c;
+        int sum = a + b + c;
+        System.out.println("sum is : " + sum);
+    }
+
+    Student(double a, double b) { // para
+        this.a = (int) a; // int -> double
+        this.b = (int) b;
+        double sum1 = a + b;
+        System.out.println("sum is : " + sum1);
+    }
+
+    void display() {
+        System.out.println("a + b : " + add); // default ke liye
+    }
+
+    public static void main(String args[]) {
+        Student s2 = new Student();
+        s2.display(); // default call
+        Student s1 = new Student(1, 3, 4); // para
+        Student s3 = new Student(10.0, 100.0); // para
+    }
+}
