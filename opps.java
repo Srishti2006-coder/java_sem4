@@ -292,7 +292,8 @@
 // }
 // }
 
-// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method overloading
+// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method
+// overloading
 
 // class Student {
 
@@ -328,109 +329,125 @@
 // 9.) Same example with constructor overloading
 
 // class Student {
-//     int a;
-//     int b;
-//     int c;
-//     int add; // instance variable
+// int a;
+// int b;
+// int c;
+// int add; // instance variable
 
-//     Student() { // default const
-//         int a = 8;
-//         int b = 8;
+// Student() { // default const
+// int a = 8;
+// int b = 8;
 
-//         add = a + b;
-//     }
-
-//     Student(int a, int b, int c) { // para const
-//         this.a = a;
-//         this.b = b;
-//         this.c = c;
-//         int sum = a + b + c;
-//         System.out.println("sum is : " + sum);
-//     }
-
-//     Student(double a, double b) { // para
-//         this.a = (int) a; // int -> double
-//         this.b = (int) b;
-//         double sum1 = a + b;
-//         System.out.println("sum is : " + sum1);
-//     }
-
-//     void display() {
-//         System.out.println("a + b : " + add); // default ke liye
-//     }
-
-//     public static void main(String args[]) {
-//         Student s2 = new Student();
-//         s2.display(); // default call
-//         Student s1 = new Student(1, 3, 4); // para
-//         Student s3 = new Student(10.0, 100.0); // para
-//     }
+// add = a + b;
 // }
 
-// 10.) Const overloading example with default const 
+// Student(int a, int b, int c) { // para const
+// this.a = a;
+// this.b = b;
+// this.c = c;
+// int sum = a + b + c;
+// System.out.println("sum is : " + sum);
+// }
+
+// Student(double a, double b) { // para
+// this.a = (int) a; // int -> double
+// this.b = (int) b;
+// double sum1 = a + b;
+// System.out.println("sum is : " + sum1);
+// }
+
+// void display() {
+// System.out.println("a + b : " + add); // default ke liye
+// }
+
+// public static void main(String args[]) {
+// Student s2 = new Student();
+// s2.display(); // default call
+// Student s1 = new Student(1, 3, 4); // para
+// Student s3 = new Student(10.0, 100.0); // para
+// }
+// }
+
+// 10.) Const overloading example with default const
 
 // class Demo {
 
-//     // Method 1: no arguments
-//     void add() {
-//         int a = 10;
-//         int b = 20;
-//         int sum = a + b;
-//         System.out.println("Sum of 2 integers: " + sum);
-//     }
+// // Method 1: no arguments
+// void add() {
+// int a = 10;
+// int b = 20;
+// int sum = a + b;
+// System.out.println("Sum of 2 integers: " + sum);
+// }
 
-//     void addThree() {
-//         int a = 1;
-//         int b = 2;
-//         int c = 3;
-//         int sum = a + b + c;
-//         System.out.println("Sum of 3 integers: " + sum);
-//     }
+// void addThree() {
+// int a = 1;
+// int b = 2;
+// int c = 3;
+// int sum = a + b + c;
+// System.out.println("Sum of 3 integers: " + sum);
+// }
 
-//     void addDouble() {
-//         double a = 2.5;
-//         double b = 3.5;
-//         double sum = a + b;
-//         System.out.println("Sum of 2 doubles: " + sum);
-//     }
+// void addDouble() {
+// double a = 2.5;
+// double b = 3.5;
+// double sum = a + b;
+// System.out.println("Sum of 2 doubles: " + sum);
+// }
 
-//     // display method
-//     void display() {
-//         add(); // calling method 1
-//         addThree(); // calling method 2
-//         addDouble(); // calling method 3
-//     }
+// // display method
+// void display() {
+// add(); // calling method 1
+// addThree(); // calling method 2
+// addDouble(); // calling method 3
+// }
 
-//     public static void main(String args[]) {
-//         Demo obj = new Demo();
-//         obj.display(); // only one call
-//     }
+// public static void main(String args[]) {
+// Demo obj = new Demo();
+// obj.display(); // only one call
+// }
 // }
 
 // 11.) Final keyword example
 
 // class Demo {
-//     final int x = 100;
+// final int x = 100;
 
-//     void show (){ 
-//         x = 90;      // gives an error because x is final and cannot be changed
-//         System.out.println(x);
-//     }
-//     public static void main (String args[]){
-//         Demo s1 = new Demo();
-//         s1.show();
-//     }
+// void show (){
+// x = 90; // gives an error because x is final and cannot be changed
+// System.out.println(x);
+// }
+// public static void main (String args[]){
+// Demo s1 = new Demo();
+// s1.show();
+// }
 // }
 
-class Demo {
-    final int x = 100;
+// class Demo {
+// final int x = 100;
 
-    void show() {
-        System.out.println(x);
-    }
+// void show() {
+// System.out.println(x);
+// }
 
-    public static void main(String args[]) {
-        Demo s1 = new Demo();
-        s1.show();
-    }
-}
+// public static void main(String args[]) {
+// Demo s1 = new Demo();
+// s1.show();
+// }
+// }
+
+// 12.) Static keyword example
+
+// class Test {
+// static int x = 100;
+
+// public static void main(String[] args) {
+// Test t1 = new Test();
+// Test t2 = new Test();
+
+// t1.x = 200;
+// t2.x = 300;
+
+// System.out.println(Test.x);
+// }
+// }
