@@ -292,8 +292,7 @@
 // }
 // }
 
-// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method
-// overloading
+// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method overloading
 
 // class Student {
 
@@ -328,42 +327,82 @@
 
 // 9.) Same example with constructor overloading
 
-class Student {
-    int a;
-    int b;
-    int c;
-    int add; // instance variable
+// class Student {
+//     int a;
+//     int b;
+//     int c;
+//     int add; // instance variable
 
-    Student() { // default const
-        int a = 8;
-        int b = 8;
+//     Student() { // default const
+//         int a = 8;
+//         int b = 8;
 
-        add = a + b;
+//         add = a + b;
+//     }
+
+//     Student(int a, int b, int c) { // para const
+//         this.a = a;
+//         this.b = b;
+//         this.c = c;
+//         int sum = a + b + c;
+//         System.out.println("sum is : " + sum);
+//     }
+
+//     Student(double a, double b) { // para
+//         this.a = (int) a; // int -> double
+//         this.b = (int) b;
+//         double sum1 = a + b;
+//         System.out.println("sum is : " + sum1);
+//     }
+
+//     void display() {
+//         System.out.println("a + b : " + add); // default ke liye
+//     }
+
+//     public static void main(String args[]) {
+//         Student s2 = new Student();
+//         s2.display(); // default call
+//         Student s1 = new Student(1, 3, 4); // para
+//         Student s3 = new Student(10.0, 100.0); // para
+//     }
+// }
+
+// 10.) Const overloading example with default const 
+
+class Demo {
+
+    // Method 1: no arguments
+    void add() {
+        int a = 10;
+        int b = 20;
+        int sum = a + b;
+        System.out.println("Sum of 2 integers: " + sum);
     }
 
-    Student(int a, int b, int c) { // para const
-        this.a = a;
-        this.b = b;
-        this.c = c;
+    void addThree() {
+        int a = 1;
+        int b = 2;
+        int c = 3;
         int sum = a + b + c;
-        System.out.println("sum is : " + sum);
+        System.out.println("Sum of 3 integers: " + sum);
     }
 
-    Student(double a, double b) { // para
-        this.a = (int) a; // int -> double
-        this.b = (int) b;
-        double sum1 = a + b;
-        System.out.println("sum is : " + sum1);
+    void addDouble() {
+        double a = 2.5;
+        double b = 3.5;
+        double sum = a + b;
+        System.out.println("Sum of 2 doubles: " + sum);
     }
 
+    // display method
     void display() {
-        System.out.println("a + b : " + add); // default ke liye
+        add(); // calling method 1
+        addThree(); // calling method 2
+        addDouble(); // calling method 3
     }
 
     public static void main(String args[]) {
-        Student s2 = new Student();
-        s2.display(); // default call
-        Student s1 = new Student(1, 3, 4); // para
-        Student s3 = new Student(10.0, 100.0); // para
+        Demo obj = new Demo();
+        obj.display(); // only one call
     }
 }
