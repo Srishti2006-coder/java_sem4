@@ -209,41 +209,44 @@
 
 /// 12.) finally block with exception
 
-class Main {
-    public static void main(String args[]) {
-
-        try {
-            System.out.println("Learning");
-            int a = 10, b = 0, c;
-            c = a / b;
-            System.out.println(c);
-            System.out.println("Stop Learning");
-        }
-
-        catch (ArithmeticException a) {
-            System.out.println("can't divide by zero");
-        }
-
-        finally {
-            System.out.println("bbbb");
-        }
-
-        System.out.println("Ended");
-    }
-}
-
 // class Main {
-// public static void main (String args[]) {
+// public static void main(String args[]) {
 
-// try{
+// try {
 // System.out.println("Learning"); // This will print
-// int a=20, b = 0, c;
-// c = a/b;
+// int a = 10, b = 0, c;
+// c = a / b; // directly jumps to catch block
 // System.out.println(c);
 // System.out.println("Stop Learning");
 // }
 
-// catch(NullPointerException a) { // different exception except original or
+// catch (ArithmeticException a) { // this will print
+// System.out.println("can't divide by zero");
+// }
+
+// finally { // this will print whether exception occurs or not
+// System.out.println("bbbb");
+// }
+
+// System.out.println("Ended"); // this will print because exception is handled
+// by catch block
+// }
+// }
+
+// 13.) finally block with abnormal exception
+
+// class Main {
+// public static void main(String args[]) {
+
+// try {
+// System.out.println("Learning"); // This will print
+// int a = 20, b = 0, c;
+// c = a / b;
+// System.out.println(c);
+// System.out.println("Stop Learning");
+// }
+
+// catch (NullPointerException a) { // different exception except original or
 // correct one
 // System.out.println("can't divide by zero");
 // }
@@ -255,3 +258,166 @@ class Main {
 // System.out.println("Ended");
 // }
 // }
+
+// 14.) multiple try catch
+
+// class Main {
+// public static void main(String[] args) {
+
+// try {
+// int a = 10, b = 0, c;
+// c = a / b;
+// System.out.println(c);
+// } catch (ArithmeticException a) {
+// System.out.println("can't be divide by 0");
+// }
+
+// try {
+// int array[] = { 10, 20, 30, 40 };
+// System.out.println(array[2]);
+// } catch (ArrayIndexOutOfBoundsException b) {
+// System.out.println("array[5] is not declared");
+// }
+
+// }
+// }
+
+// 15) har ek try ka apna finally hota ha , finally is not global
+
+// class Main {
+// public static void main (String[] args) {
+
+// try{
+// int a = 10,b= 0, c;
+// c = a/b;
+// System.out.println(c);
+// }
+// catch(ArithmeticException a) {
+// System.out.println("can't be divide by 0");
+// }
+
+// finally{
+// System.out.println("hy");
+// }
+
+// try{
+// int array[] = {10,20,30,40};
+// System.out.println(array[2]);
+// }
+// catch(ArrayIndexOutOfBoundsException b) {
+// System.out.println("array[5] is not declared");
+// }
+
+// finally{
+// System.out.println("hy");
+// }
+// }
+// }
+
+// class Main {
+// public static void main(String[] args) {
+
+// try {
+// int a = 10, b = 0, c;
+// c = a / b;
+// System.out.println(c);
+// } catch (ArrayIndexOutOfBoundsException b) {
+// System.out.println("can't be divide by 0");
+// }
+
+// finally {
+// System.out.println("hy"); // Individually try ka apna finally hota ha,
+// finally is not global
+// }
+
+// try {
+// int array[] = { 10, 20, 30, 40 };
+// System.out.println(array[2]);
+// } catch (ArithmeticException a) {
+// System.out.println("array[5] is not declared");
+// }
+
+// finally {
+// System.out.println("hy");
+// }
+
+// }
+// }
+
+// Step 2: Exception aaya ❌ (unhandled)
+// 🔹 Step 3:
+
+// 👉 JVM bolta hai:
+
+// “Theek hai, jo try chal raha tha uska cleanup kar deta hoon”
+
+// ➡️ 1st finally run hota hai (hy1) ✅
+
+// 🔴 Step 4 (game over)
+
+// 👉 Exception abhi bhi unhandled hai
+// 👉 JVM: program terminate 💥
+
+// ❗ IMPORTANT
+
+// 👉 Program yahi khatam ho gaya
+
+// ➡️ Isliye:
+
+// 2nd try ❌ start hi nahi hua
+// to uska finally ❌ kaise chalega?
+
+// class Main {
+// public static void main(String[] args) {
+
+// try {
+// int a = 10, b = 0, c;
+// c = a / b;
+// System.out.println(c);
+// } catch (ArrayIndexOutOfBoundsException b) {
+// System.out.println("can't be divide by 0");
+// }
+
+// finally {
+// System.out.println("hy1"); // executes this only
+// }
+
+// try {
+// int array[] = { 10, 20, 30, 40 };
+// System.out.println(array[2]);
+// } catch (ArithmeticException a) {
+// System.out.println("array[5] is not declared");
+// }
+
+// finally {
+// System.out.println("hy");
+// }
+
+// }
+// }
+
+// 16.) Multiple Catch
+
+class Codechef {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 2;
+            int c;
+            c = a / b;
+            System.out.println(c);
+
+            int arr[] = { 10, 20, 30, 40 };
+            System.out.println(arr[2]);
+
+            String str = "ankit";
+            System.out.println(str.toUpperCase());
+        } catch (ArrayIndexOutOfBoundsException a) {
+            System.out.println("Array Exception");
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception");
+        } catch (Exception x) {
+            System.out.println("Super class Exception");
+        }
+    }
+}
