@@ -90,7 +90,7 @@
 // }
 // }
 
-// 6.) NullPointerException with try catch
+// /* 6.) NullPointerException with try catch */
 
 // class Main {
 // public static void main(String args[]) {
@@ -104,7 +104,7 @@
 // }
 // }
 
-// 7.) when str is not null then try will execute without catch
+// /* 7.) when str is not null then try will execute without catch */
 
 // class Main {
 // public static void main(String args[]) {
@@ -118,7 +118,7 @@
 // }
 // }
 
-// 8.) try-catch NumberFormatException without try catch
+// /* 8.) try-catch NumberFormatException without try catch */
 
 // class Main {
 // public static void main (String args[]) {
@@ -132,4 +132,48 @@
 // }
 // }
 
-// 9.) try-catch NumberFormatException with try catch
+// /* 9.) try-catch NumberFormatException with try catch */
+
+// class Main {
+// public static void main (String args[]){
+// String str = "srishti";
+
+// try {
+// int a = Integer.parseInt(str);
+// System.out.println(a);
+// }
+// catch(NumberFormatException e){ // this will print
+// System.out.println("String ankit can not be converted into integer");
+// }
+// }
+// }
+
+// class Main {
+// public static void main (String args[]){
+// String str = "123";
+
+// try {
+// int a = Integer.parseInt(str);
+// System.out.println(a); // prins 123
+// }
+// catch(NumberFormatException e){
+// System.out.println("String ankit can not be converted into integer");
+// }
+// }
+// }
+
+// 10.) abnormal exception as we passing ArithemeticException but it is NumberFormatException
+
+class Main {
+    public static void main(String args[]) {
+        String str = "ankush";
+
+        try {
+            int a = Integer.parseInt(str);
+            System.out.println(a);
+        } catch (ArithmeticException e) {
+            System.out.println("String ankit can not be converted into integer");
+        }
+        System.out.println("Byeee");
+    }
+}
