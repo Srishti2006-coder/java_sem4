@@ -259,7 +259,7 @@
 // }
 // }
 
-// 14.) multiple try catch
+// /* 14.) multiple try catch */
 
 // class Main {
 // public static void main(String[] args) {
@@ -282,7 +282,7 @@
 // }
 // }
 
-// 15) har ek try ka apna finally hota ha , finally is not global
+// /* 15.) har ek try ka apna finally hota ha , finally is not global */
 
 // class Main {
 // public static void main (String[] args) {
@@ -344,6 +344,8 @@
 // }
 // }
 
+/* ************************************************************************** */
+
 // Step 2: Exception aaya ❌ (unhandled)
 // 🔹 Step 3:
 
@@ -396,28 +398,97 @@
 // }
 // }
 
-// 16.) Multiple Catch
+// 16.) /* Multiple Catch No exception occur */
 
-class Codechef {
-    public static void main(String[] args) {
-        try {
-            int a = 10;
-            int b = 2;
-            int c;
-            c = a / b;
-            System.out.println(c);
+// class Codechef {
+// public static void main(String[] args) {
+// try {
+// int a = 10;
+// int b = 2;
+// int c;
+// c = a / b;
+// System.out.println(c);
 
-            int arr[] = { 10, 20, 30, 40 };
-            System.out.println(arr[2]);
+// int arr[] = { 10, 20, 30, 40 };
+// System.out.println(arr[2]);
 
-            String str = "ankit";
-            System.out.println(str.toUpperCase());
-        } catch (ArrayIndexOutOfBoundsException a) {
-            System.out.println("Array Exception");
-        } catch (ArithmeticException e) {
-            System.out.println("Arithmetic Exception");
-        } catch (Exception x) {
-            System.out.println("Super class Exception");
-        }
-    }
-}
+// String str = "ankit";
+// System.out.println(str.toUpperCase());
+// } catch (ArrayIndexOutOfBoundsException a) {
+// System.out.println("Array Exception");
+// } catch (ArithmeticException e) {
+// System.out.println("Arithmetic Exception");
+// } catch (Exception x) {
+// System.out.println("Super class Exception");
+// }
+// }
+// }
+
+// /* 17.) abh yaha jaise string me exception tha catch me koi matching
+// exception nahi tha
+// pr kyuki super class Excption tha is liye vo vaha hit ho gya */ //
+
+// class Codechef {
+// public static void main (String[] args) {
+// try {
+// int a = 10;
+// int b = 2;
+// int c;
+// c = a/b;
+// System.out.println(c);
+
+// int arr[] = {10,20,30,40};
+// System.out.println(arr[2]);
+
+// // String str = "123";
+// // int f = Integer.parseInt(str);
+// // System.out.println(f);
+
+// String str = null;
+// System.out.println(str.toUpperCase()); // Exception
+// }
+// catch(ArrayIndexOutOfBoundsException a) {
+// System.out.println("Array Exception");
+// }
+// catch(ArithmeticException e) {
+// System.out.println("Arithmetic Exception");
+// }
+// catch(Exception x){
+// System.out.println("Super class Exception"); // this will print because there
+// is no matching exception for NullPointerException but it is parent class of
+// all exceptions
+// }
+// }
+// }
+
+// 18.) Agar sbhi exceptions ho to very first Excp in try is execute and no
+// other exception will be executed
+// Means to say that whole system crash or terminate there only first exception
+// will be executed and no other exception will be executed
+
+// class Codechef {
+// public static void main (String[] args) {
+// try {
+// int a = 10;
+// int b = 0;
+// int c;
+// c = a/b;
+// System.out.println(c);
+
+// int arr[] = {10,20,30,40};
+// System.out.println(arr[20]);
+
+// String str = null;
+// System.out.println(str.toUpperCase());
+// }
+// catch(ArrayIndexOutOfBoundsException a) {
+// System.out.println("Array Exception");
+// }
+// catch(ArithmeticException e) {
+// System.out.println("Arithmetic Exception");
+// }
+// catch(Exception x){
+// System.out.println("Super class Exception");
+// }
+// }
+// }
