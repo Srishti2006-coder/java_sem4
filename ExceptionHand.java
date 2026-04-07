@@ -90,4 +90,46 @@
 // }
 // }
 
-// 6.
+// 6.) NullPointerException with try catch
+
+// class Main {
+// public static void main(String args[]) {
+// String str = null;
+
+// try {
+// System.out.println(str.toUpperCase());
+// } catch (NullPointerException e) {
+// System.out.println("null");
+// }
+// }
+// }
+
+// 7.) when str is not null then try will execute without catch
+
+// class Main {
+// public static void main(String args[]) {
+// String str = "Ankit";
+
+// try {
+// System.out.println(str.toUpperCase());
+// } catch (NullPointerException e) {
+// System.out.println("null");
+// }
+// }
+// }
+
+// 8.) try-catch NumberFormatException without try catch
+
+// class Main {
+// public static void main (String args[]) {
+// String str = "ankit";
+
+// int a = Integer.parseInt(str); // Exception in thread "main"
+// java.lang.NumberFormatException: For input string: "ankit"
+// System.out.println(a);
+
+// System.out.println("Hello");
+// }
+// }
+
+// 9.) try-catch NumberFormatException with try catch
