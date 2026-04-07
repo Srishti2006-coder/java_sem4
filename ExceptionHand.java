@@ -162,18 +162,96 @@
 // }
 // }
 
-// 10.) abnormal exception as we passing ArithemeticException but it is NumberFormatException
+// 10.) abnormal exception as we passing ArithemeticException but it is
+// NumberFormatException
+
+// class Main {
+// public static void main(String args[]) {
+// String str = "ankush";
+
+// try {
+// int a = Integer.parseInt(str);
+// System.out.println(a);
+// } catch (ArithmeticException e) {
+// System.out.println("String ankit can not be converted into integer");
+// }
+// System.out.println("Byeee");
+// }
+// }
+
+// 11.) finally block
+
+// finally block is used to execute the code which is necessary to be executed
+// whether exception occurs or not
+
+// class Main {
+// public static void main(String args[]) {
+
+// try {
+// System.out.println("Learning");
+// int a = 20, b = 2, c; // No exception occur here
+// c = a / b;
+// System.out.println(c);
+// System.out.println("Stop Learning");
+// }
+
+// catch (ArithmeticException a) { // this will not execute
+// System.out.println("can't divide by zero");
+// }
+
+// finally {
+// System.out.println("bbbb");
+// }
+
+// System.out.println("Ended");
+// }
+// }
+
+/// 12.) finally block with exception
 
 class Main {
     public static void main(String args[]) {
-        String str = "ankush";
 
         try {
-            int a = Integer.parseInt(str);
-            System.out.println(a);
-        } catch (ArithmeticException e) {
-            System.out.println("String ankit can not be converted into integer");
+            System.out.println("Learning");
+            int a = 10, b = 0, c;
+            c = a / b;
+            System.out.println(c);
+            System.out.println("Stop Learning");
         }
-        System.out.println("Byeee");
+
+        catch (ArithmeticException a) {
+            System.out.println("can't divide by zero");
+        }
+
+        finally {
+            System.out.println("bbbb");
+        }
+
+        System.out.println("Ended");
     }
 }
+
+// class Main {
+// public static void main (String args[]) {
+
+// try{
+// System.out.println("Learning"); // This will print
+// int a=20, b = 0, c;
+// c = a/b;
+// System.out.println(c);
+// System.out.println("Stop Learning");
+// }
+
+// catch(NullPointerException a) { // different exception except original or
+// correct one
+// System.out.println("can't divide by zero");
+// }
+
+// finally {
+// System.out.println("bbbb");
+// }
+
+// System.out.println("Ended");
+// }
+// }
