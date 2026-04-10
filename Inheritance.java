@@ -1,166 +1,288 @@
 
-/*                     Single Inheritance                */
+/* Single Inheritance */
 // class Rectangle {
-//     void area(int l, int b) {
-//         int area = l * b;
-//         System.out.println("Area :  " + area);
-//     }
+// void area(int l, int b) {
+// int area = l * b;
+// System.out.println("Area : " + area);
+// }
 // }
 
 // class Rectangle2 extends Rectangle {
-//     void perimeter(int l, int b) {
-//         int perimeter = 2 * (l + b);
-//         System.out.println("Perimeter is : " + perimeter);
-//     }
+// void perimeter(int l, int b) {
+// int perimeter = 2 * (l + b);
+// System.out.println("Perimeter is : " + perimeter);
+// }
 // }
 
 // class Main {
-//     public static void main(String args[]) {
-//         Rectangle2 r1 = new Rectangle2();
-//         r1.area(4, 5);
-//         r1.perimeter(10, 20);
-//     }
+// public static void main(String args[]) {
+// Rectangle2 r1 = new Rectangle2();
+// r1.area(4, 5);
+// r1.perimeter(10, 20);
+// }
 // }
 
-/*                     Multilevel Inheritance                */
+/* Multilevel Inheritance */
+
+// 1.)
 
 // class Number {
-//     int n = 10;
+// int n = 10;
 // }
 
 // class Addition extends Number {
-//     void add() {
-//         int add = n + n;
-//         System.out.println(add);
-//     }
+// void add() {
+// int add = n + n;
+// System.out.println(add);
+// }
 // }
 
 // class Cube extends Addition {
-//     void mul() {
-//         int mull = n * n * n;
-//         System.out.println(mull);
-//     }
+// void mul() {
+// int mull = n * n * n;
+// System.out.println(mull);
+// }
 // }
 
 // class Main {
-//     public static void main(String args[]) {
-//         Cube obj = new Cube();
-//         obj.mul();
-//         obj.add();
-//     }
+// public static void main(String args[]) {
+// Cube obj = new Cube();
+// obj.mul();
+// obj.add();
+// }
 // }
 
-/*class Number {
-    int a = 10;
-    int b = 20;
-}
+/*
+ * 2>)
+ * 
+ * class Number {
+ * int a = 10;
+ * int b = 20;
+ * }
+ * 
+ * class Addition extends Number {
+ * void add() {
+ * int add = a + b;
+ * System.out.println(add);
+ * }
+ * }
+ * 
+ * class Subtraction extends Addition {
+ * void sub() {
+ * int sub = a - b;
+ * System.out.println(sub);
+ * }
+ * }
+ * 
+ * class Multiplication extends Subtraction {
+ * void mul() {
+ * int mul = a * b;
+ * System.out.println(mul);
+ * }
+ * }
+ * 
+ * class Main {
+ * public static void main(String args[]) {
+ * Multiplication m1 = new Multiplication();
+ * m1.add();
+ * m1.sub();
+ * m1.mul();
+ * }
+ * }
+ */
 
-class Addition extends Number {
-    void add() {
-        int add = a + b;
-        System.out.println(add);
-    }
-}
+/* Hierarichal inheritance */
 
-class Subtraction extends Addition {
-    void sub() {
-        int sub = a - b;
-        System.out.println(sub);
-    }
-}
+// class Calculator {
+// int a = 10, b = 5;
 
-class Multiplication extends Subtraction {
-    void mul() {
-        int mul = a * b;
-        System.out.println(mul);
-    }
-}
+// void add() {
+// System.out.println("Addition: " + (a + b));
+// }
+// }
 
-class Main {
-    public static void main(String args[]) {
-        Multiplication m1 = new Multiplication();
-        m1.add();
-        m1.sub();
-        m1.mul();
-    }
-}  */
+// class Subtraction extends Calculator {
+// void subtract() {
+// System.out.println("Subtraction: " + (a - b));
+// }
+// }
 
-/*         Super class         */
+// class Multiplication extends Calculator {
+// void multiply() {
+// System.out.println("Multiplication: " + (a * b));
+// }
+// }
+
+// class Main {
+// public static void main(String[] args) {
+
+// Subtraction s = new Subtraction();
+// Multiplication m = new Multiplication();
+
+// s.add(); // parent method
+// s.subtract(); // own
+
+// m.add(); // parent method
+// m.multiply(); // own
+
+// // m.subtract(); ❌ ERROR
+// // s.multiply(); ❌ ERROR
+// }
+// }
+
+/* Super class */
 
 // 1.) super keyword is used to refer immediate parent class instance variable.
 
 // class A {
-//     int a = 10;
-//     // void show(){
-//     // System.out.println("a is : " +a);
-//     // }
+// int a = 10;
+// // void show(){
+// // System.out.println("a is : " +a);
+// // }
 // }
 
 // class B extends A {
-//     int b = 20;
+// int b = 20;
 
-//     void show() {
-//         System.out.println(b);
-//         System.out.println(super.a);
-//     }
+// void show() {
+// System.out.println(b);
+// System.out.println(super.a);
+// }
 // }
 
 // class Main {
-//     public static void main(String args[]) {
-//         B obj = new B();
-//         obj.show();
-//     }
+// public static void main(String args[]) {
+// B obj = new B();
+// obj.show();
+// }
 // }
 
-// 2.) 
+// 2.)
 
 // class A {
-//     void show() {
-//         System.out.println("Hello viewer");
-//     }
+// void show() {
+// System.out.println("Hello viewer");
+// }
 // }
 
 // class B extends A {
-//     void show() {
-//         System.out.println("Bye viewer");
-//         super.show();
-//     }
+// void show() {
+// System.out.println("Bye viewer");
+// super.show();
+// }
 // }
 
 // class Main {
-//     public static void main(String args[]) {
-//         B obj = new B();
-//         obj.show();
-//     }
+// public static void main(String args[]) {
+// B obj = new B();
+// obj.show();
+// }
 // }
 
-/*        Default const  */
-class A {
-    A() {
-        System.out.println("Hello ");
-    }
-}
+/* Default const */
 
-class B extends A {
-    // void show () {
-    // System.out.println("Bye");
-    // }
+// class A {
+// A() {
+// System.out.println("Hello ");
+// }
+// }
 
-    // Yaha B() const by default bn gya hidden tabhi print ho gya void me bhi
-    // Prints both A and B kyuiki yaha super keyword reserved hota hai by defaualt
-    // mention kro to bdiya vrna by default use ho jata hai
+// class B extends A {
+// // void show () {
+// // System.out.println("Bye");
+// // }
 
-    B() {
+// // Yaha B() const by default bn gya hidden tabhi print ho gya void me bhi
+// // Prints both A and B kyuiki yaha super keyword reserved hota hai by
+// defaualt
+// // mention kro to bdiya vrna by default use ho jata hai
 
-        super();
-        System.out.println("Byee");
+// B() {
 
-    }
-}
+// super();
+// System.out.println("Byee");
 
-class Test {
-    public static void main(String args[]) {
-        B obj = new B();
-        // obj.show();
-    }
-}
+// }
+// }
+
+// class Test {
+// public static void main(String args[]) {
+// B obj = new B();
+// // obj.show();
+// }
+// }
+
+/* Paramterized const */
+
+// class A {
+// A(int a) {
+// System.out.println("Hello : " + a);
+// }
+// }
+
+// class B extends A {
+// B() {
+// // System.out.println("Hy");
+
+// // Pehle parent ka constructor call hona zaroori hai
+// // Tabhi child properly initialize hoga
+
+// super(100); // In paramterized super keyword likhna must hai
+// System.out.println("byeee ");
+// }
+// }
+
+// class Main {
+// public static void main(String args[]) {
+// B obj = new B();
+// }
+// }
+
+/* Override */
+
+/* example 1.) */
+
+// class Parent {
+// void show() {
+// System.out.println("Parent");
+// }
+// }
+
+// class Child extends Parent {
+// void show() {
+// super.show();
+// System.out.println("Child");
+// }
+
+// public static void main(String[] args) {
+// Child c = new Child();
+// // super.show();
+// c.show(); // Child
+
+// // Parent p = new Parent();
+// // p.show();
+// }
+// }
+
+/* example 2.) */
+
+// class Calculation {
+// void calculate(int a, int b) {
+// System.out.println("Sum: " + (a + b));
+// }
+// }
+
+// class Result extends Calculation {
+// void calculate(int a, int b) { // overriding
+// super.calculate(a, b);
+// System.out.println("Subtraction: " + (a - b));
+// }
+// }
+
+// class Main {
+// public static void main(String[] args) {
+// Result obj = new Result();
+// obj.calculate(10, 5);
+// obj.calculate(100, 9);
+// }
+// }

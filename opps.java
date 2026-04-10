@@ -292,8 +292,7 @@
 // }
 // }
 
-// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method
-// overloading
+// 8.) Addition of 2 int no,s , 3 int no, and 2 double no,s using method //
 
 // class Student {
 
@@ -368,7 +367,7 @@
 // }
 // }
 
-// 10.) Const overloading example with default const
+// 10.) Method overloading example with default const
 
 // class Demo {
 
