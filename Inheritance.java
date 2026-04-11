@@ -215,6 +215,7 @@
 /* Paramterized const */
 
 // class A {
+
 // A(int a) {
 // System.out.println("Hello : " + a);
 // }
@@ -222,6 +223,7 @@
 
 // class B extends A {
 // B() {
+
 // // System.out.println("Hy");
 
 // // Pehle parent ka constructor call hona zaroori hai
@@ -286,3 +288,46 @@
 // obj.calculate(100, 9);
 // }
 // }
+
+
+
+// /* Hash Map , Hash Set, ArrayList */  //
+
+// 1.) ArrayList 
+
+class TestArrayList {
+    public static void main(String[] args) {
+        
+        // Declaration
+        ArrayList<Integer> list = new ArrayList<>();
+        
+        // 1. Duplicate allowed ✔
+        list.add(10);
+        list.add(20);
+        list.add(10); 
+        
+        // 2. Order maintained ✔
+        System.out.println(list); // [10, 20, 10]
+        
+        // 3. Index-based access ✔
+        System.out.println("Element at index 1: " + list.get(1));
+        
+        
+        list.add(null);   // 4. Allows null ✔
+        System.out.println("After adding null: " + list);
+        
+        // 5. Size
+        System.out.println("Size: " + list.size());
+        
+        // 6. Remove by index
+        list.remove(0);
+        System.out.println("After removal: " + list);
+        
+        // 7. Iteration
+        for(Integer x : list){
+            System.out.print(x + " ");
+        }
+    }
+}
+
+
