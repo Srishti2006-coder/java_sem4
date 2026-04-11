@@ -295,6 +295,8 @@
 
 // 1.) ArrayList 
 
+import java.util.*;
+
 class TestArrayList {
     public static void main(String[] args) {
         
